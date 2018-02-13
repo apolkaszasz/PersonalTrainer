@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1005550979737",
+    "firebase_url": "https://personaltrainer-38437.firebaseio.com",
+    "project_id": "personaltrainer-38437",
+    "storage_bucket": "personaltrainer-38437.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005550979737:android:f04823e8a5c2637d",
+        "android_client_info": {
+          "package_name": "com.personaltrainer.apolka.personaltrainer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005550979737-pgaun3kqn38pv9u02j6uenf3cfrs0fak.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.personaltrainer.apolka.personaltrainer",
+            "certificate_hash": "d5645e2ee44f38ec9e242fd608d827a410b393d4"
+          }
+        },
+        {
+          "client_id": "1005550979737-27oehqu4skalsu3f0oua7uka2hlolmci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx2XvCaR-TU7ltZra5U8mzvypA-1WAGPE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005550979737-27oehqu4skalsu3f0oua7uka2hlolmci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
