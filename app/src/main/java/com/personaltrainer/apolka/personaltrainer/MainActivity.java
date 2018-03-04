@@ -57,7 +57,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             case R.id.signOutButton:
                 signOut();
                 break;
+            case R.id.Exer:
+                exerActivity();
+                break;
         }
+    }
+    private void exerActivity(){
+        Intent i = new Intent(this, Main2Activity.class);
+        startActivity(i);
     }
     private void signIn(){
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);

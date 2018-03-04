@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PersonalTrainer</string>
+    <string name="title_plans">MyPlans</string>
+    <string name="title_workouts">Workouts</string>
+    <string name="title_advices">Advices</string>
+    <string name="title_results">Results</string>
 </resources>
