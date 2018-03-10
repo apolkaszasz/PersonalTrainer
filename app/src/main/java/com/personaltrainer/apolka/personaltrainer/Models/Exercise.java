@@ -13,7 +13,7 @@ public class Exercise {
     private int RecommendedRepetitionsToIncreaseWith;
     private String Description;
 
-    Exercise(String name, Muscle muscle, int recommendedRepetitions, int recommendedSets, int recommendedRepetitionsToIncreaseWith, String description){
+    public Exercise(String name, Muscle muscle, int recommendedRepetitions, int recommendedSets, int recommendedRepetitionsToIncreaseWith, String description){
         this.Name = name;
         this.Muscle = muscle;
         this.RecommendedRepetitions = recommendedRepetitions;

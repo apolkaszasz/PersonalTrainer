@@ -17,7 +17,7 @@ public class PlannedProgramme {
     private List<PlannedExercise> PlannedExerciseList;
     private FirebaseUser User;
 
-    PlannedProgramme(Programme programme, Date startDate, int plannedDays, int plannedRestDays, List<PlannedExercise> plannedExerciseList, FirebaseUser user){
+    public PlannedProgramme(Programme programme, Date startDate, int plannedDays, int plannedRestDays, List<PlannedExercise> plannedExerciseList, FirebaseUser user){
         this.Programme = programme;
         this.StartDate = startDate;
         this.PlannedDays = plannedDays;

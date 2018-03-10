@@ -1,17 +1,34 @@
 package com.personaltrainer.apolka.personaltrainer;
 
-import android.app.Fragment;
+import android.net.Uri;
+import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.support.v4.app.FragmentTransaction;
 
-public class Main2Activity extends AppCompatActivity {
+
+import com.personaltrainer.apolka.personaltrainer.MyPlansFragment;
+import com.personaltrainer.apolka.personaltrainer.WorkoutsFragment;
+import com.personaltrainer.apolka.personaltrainer.AdvicesFragment;
+import com.personaltrainer.apolka.personaltrainer.ResultsFragment;
+//import com.personaltrainer.apolka.personaltrainer.BottomNavigationBehavior;
+
+
+public class Main2Activity extends AppCompatActivity
+implements MyPlansFragment.OnFragmentInteractionListener,WorkoutsFragment.OnFragmentInteractionListener,
+AdvicesFragment.OnFragmentInteractionListener, ResultsFragment.OnFragmentInteractionListener{
 
 
     private ActionBar toolbar;
+
+    @Override
+    public void onFragmentInteraction(Uri uri){
+        
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +37,11 @@ public class Main2Activity extends AppCompatActivity {
 
         toolbar = getSupportActionBar();
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //load the MypPlans fragment by default
 
         toolbar.setTitle("MyPlans");
+        loadFragment(new MyPlansFragment());
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -34,19 +52,35 @@ public class Main2Activity extends AppCompatActivity {
             Fragment fragment;
             switch (item.getItemId()) {
                 case R.id.navigation_plans:
-                    toolbar.setTitle("My Plans");
+                    toolbar.setTitle("MyPlans");
+                    fragment = new MyPlansFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_workouts:
                     toolbar.setTitle("Workouts");
+                    fragment = new WorkoutsFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_advices:
                     toolbar.setTitle("Advices");
+                    fragment = new AdvicesFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_results:
                     toolbar.setTitle("Results");
+                    fragment = new ResultsFragment();
+                    loadFragment(fragment);
                     return true;
             }
             return false;
         }
     };
+
+    private void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }

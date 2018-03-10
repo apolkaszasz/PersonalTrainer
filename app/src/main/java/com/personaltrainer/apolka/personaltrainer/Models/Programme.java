@@ -15,7 +15,7 @@ public class Programme {
     private int RecommendedRestDays;
     private List<Exercise> ExerciseList;
 
-    Programme(String name, String description, int recommendedDays, int recommendedRestDays, List<Exercise> exerciseList){
+    public Programme(String name, String description, int recommendedDays, int recommendedRestDays, List<Exercise> exerciseList){
         this.Name = name;
         this.Description = description;
         this.RecommendedDays = recommendedDays;

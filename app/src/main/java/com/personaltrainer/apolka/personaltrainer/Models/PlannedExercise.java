@@ -16,7 +16,7 @@ public class PlannedExercise {
     private int PlannedRepetitionsToIncreaseWith;
     private FirebaseUser User;
 
-    PlannedExercise(Exercise exercise, Date date, int plannedRepetitions, int plannedSets, int plannedRepetitionsToIncreaseWith, FirebaseUser user){
+    public PlannedExercise(Exercise exercise, Date date, int plannedRepetitions, int plannedSets, int plannedRepetitionsToIncreaseWith, FirebaseUser user){
         this.Exercise = exercise;
         this.Date = date;
         this.PlannedRepetitions = plannedRepetitions;
