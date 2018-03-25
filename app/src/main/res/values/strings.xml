@@ -5,5 +5,9 @@
     <string name="title_advices">Advices</string>
     <string name="title_results">Results</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Hello blank fragment Mz plans</string>
+    <string name="hello_blank_fragmentW">Hello blank fragment Workouts</string>
+    <string name="title_activity_tabbed_workouts">TabbedActivityWorkouts</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

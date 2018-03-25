@@ -7,28 +7,26 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.support.v4.app.FragmentTransaction;
-
-
-import com.personaltrainer.apolka.personaltrainer.MyPlansFragment;
-import com.personaltrainer.apolka.personaltrainer.WorkoutsFragment;
-import com.personaltrainer.apolka.personaltrainer.AdvicesFragment;
-import com.personaltrainer.apolka.personaltrainer.ResultsFragment;
 //import com.personaltrainer.apolka.personaltrainer.BottomNavigationBehavior;
 
 
 public class Main2Activity extends AppCompatActivity
-implements MyPlansFragment.OnFragmentInteractionListener,WorkoutsFragment.OnFragmentInteractionListener,
+implements MyPlansFragment.OnFragmentInteractionListener,WorkoutFragment.OnFragmentInteractionListener,
 AdvicesFragment.OnFragmentInteractionListener, ResultsFragment.OnFragmentInteractionListener{
 
 
     private ActionBar toolbar;
 
+    private static final String TAG = "Main2Activity";
+
     @Override
     public void onFragmentInteraction(Uri uri){
         
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +40,9 @@ AdvicesFragment.OnFragmentInteractionListener, ResultsFragment.OnFragmentInterac
         toolbar.setTitle("MyPlans");
         loadFragment(new MyPlansFragment());
 
+
+        BottomNavigationView mBottomNavigationView = (BottomNavigationView)findViewById(R.id.navigation);
+        mBottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -57,8 +58,9 @@ AdvicesFragment.OnFragmentInteractionListener, ResultsFragment.OnFragmentInterac
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_workouts:
+                    Log.d(TAG,"here...............");
                     toolbar.setTitle("Workouts");
-                    fragment = new WorkoutsFragment();
+                    fragment = new WorkoutFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_advices:

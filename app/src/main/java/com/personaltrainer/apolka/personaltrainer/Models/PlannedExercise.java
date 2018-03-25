@@ -9,15 +9,17 @@ import java.util.Date;
  */
 
 public class PlannedExercise {
-    private Exercise Exercise;
+
+    private String ExerciseName;
     private Date Date;
     private int PlannedRepetitions;
     private int PlannedSets;
     private int PlannedRepetitionsToIncreaseWith;
     private FirebaseUser User;
 
-    public PlannedExercise(Exercise exercise, Date date, int plannedRepetitions, int plannedSets, int plannedRepetitionsToIncreaseWith, FirebaseUser user){
-        this.Exercise = exercise;
+    public PlannedExercise(){};
+    public PlannedExercise(String exerciseName, Date date, int plannedRepetitions, int plannedSets, int plannedRepetitionsToIncreaseWith, FirebaseUser user){
+        this.ExerciseName = exerciseName;
         this.Date = date;
         this.PlannedRepetitions = plannedRepetitions;
         this.PlannedSets = plannedSets;
@@ -25,7 +27,7 @@ public class PlannedExercise {
         this.User = user;
     }
 
-    public Exercise getExercise(){return this.Exercise;}
+    public String getExercise(){return this.ExerciseName;}
     public Date getDate(){return  this.Date;}
     public int getPlannedRepetitions(){return this.PlannedRepetitions;}
     public int getPlannedSets(){return this.PlannedSets;}
@@ -33,7 +35,7 @@ public class PlannedExercise {
     public FirebaseUser getUser(){return this.User;}
 
 
-    public void setExercise(Exercise exercise){this.Exercise = exercise;}
+    public void setExercise(String exerciseName){this.ExerciseName = exerciseName;}
     public void setDate(Date date){this.Date =date;}
     public void setPlannedRepetitions(int plannedRepetitions){this.PlannedRepetitions = plannedRepetitions;}
     public void setPlannedSets(int plannedSets){this.PlannedSets = plannedSets;}

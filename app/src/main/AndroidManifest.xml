@@ -19,7 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Exerc" />
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".Main2Activity" />
+        <activity
+            android:name=".TabbedActivityWorkouts"
+            android:label="@string/title_activity_tabbed_workouts"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -2,18 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.personaltrainer.apolka.personaltrainer.WorkoutsExercisesFragment">
+    tools:context="com.personaltrainer.apolka.personaltrainer.ProgrammesFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
-
-    <ListView
-        android:id="@+id/exerciseListView"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/linearLayout"
-        android:divider="@android:color/transparent"
-        android:transcriptMode="alwaysScroll"
-        tools:listitem="@layout/item_exercise"/>
+        android:text="Programmes List" />
 
 </FrameLayout>
