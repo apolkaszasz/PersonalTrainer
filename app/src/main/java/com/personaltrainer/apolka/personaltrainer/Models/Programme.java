@@ -11,28 +11,28 @@ import java.util.List;
 public class Programme {
     private String Name;
     private String Description;
-    private int RecommendedDays;
-    private int RecommendedRestDays;
-    private List<Exercise> ExerciseList;
+    private int DurationInWeeks;
+    private int[] DaysListPerWeek;  //[0,1,1,1,0,1,1] for ex
+    private String[][] ExerciseList;
 
-    public Programme(String name, String description, int recommendedDays, int recommendedRestDays, List<Exercise> exerciseList){
+    public Programme(String name, String description, int durationInWeeks, int[] daysListPerWeek, String[][] exerciseList){
         this.Name = name;
         this.Description = description;
-        this.RecommendedDays = recommendedDays;
-        this.RecommendedRestDays = recommendedRestDays;
+        this.DurationInWeeks = durationInWeeks;
+        this.DaysListPerWeek = daysListPerWeek;
         this.ExerciseList = exerciseList;
     }
 
     public String getName(){return this.Name;}
     public String getDescription(){return  this.Description;}
-    public int getRecommendedDays(){return this.RecommendedDays;}
-    public int getRecommendedRestDays(){return this.RecommendedRestDays;}
-    public List<Exercise> getExerciseList(){return this.ExerciseList;}
+    public int getDurationInWeeks(){return this.DurationInWeeks;}
+    public int[] getDaysListPerWeek(){return this.DaysListPerWeek;}
+    public String[][] getExerciseList(){return this.ExerciseList;}
 
     public void setName(String name){this.Name = name;}
     public void setDescription(String description){this.Description = description;}
-    public void setRecommendedDays(int recommendedDays){this.RecommendedDays = recommendedDays;}
-    public void setRecommendedRestDays(int recommendedRestDays){this.RecommendedRestDays = recommendedRestDays;}
-    public void setExerciseList(List<Exercise> exerciseList){this.ExerciseList = exerciseList;}
+    public void setDurationInWeeks(int durationInWeeks){this.DurationInWeeks = durationInWeeks;}
+    public void setDaysListPerWeek(int[] daysListPerWeek){this.DaysListPerWeek = daysListPerWeek;}
+    public void setExerciseList(String[][] exerciseList){this.ExerciseList = exerciseList;}
 
 }

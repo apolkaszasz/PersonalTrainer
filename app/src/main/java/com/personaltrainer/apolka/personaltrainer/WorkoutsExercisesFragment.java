@@ -1,6 +1,7 @@
 package com.personaltrainer.apolka.personaltrainer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +9,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -44,6 +48,7 @@ public class WorkoutsExercisesFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
 
+    private GridView gridView;
     private ListView mExerciseListView;
     private ExerciseAdapter mExerciseAdapter;
 
@@ -141,14 +146,26 @@ public class WorkoutsExercisesFragment extends Fragment {
     @Override
     public void onViewCreated(View view,  Bundle savedInstanceState) {
 
-        mExerciseListView = (ListView)getView().findViewById(R.id.exerciseListView);
+        gridView = (GridView)getView().findViewById(R.id.mygridview);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Exercise exercise = (Exercise) adapterView.getAdapter().getItem(i);
+                Intent intent = new Intent(getActivity(), ExerciseItem.class);
+                intent.putExtra("EcerciseObject", exercise);
+                startActivity(intent);
+
+            }
+        });
+        //mExerciseListView = (ListView)getView().findViewById(R.id.exerciseListView);
 
 
         //initialize exercise ListView and its adapter
         List<Exercise> exercises = new ArrayList<>();
         mExerciseAdapter = new ExerciseAdapter(this, R.layout.item_exercise, exercises);
-        mExerciseListView.setAdapter(mExerciseAdapter);
-
+        //mExerciseListView.setAdapter(mExerciseAdapter);
+        gridView.setAdapter(mExerciseAdapter);
 
         attachDatabaseReadListener();
 
