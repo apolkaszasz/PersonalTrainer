@@ -2,9 +2,6 @@ package com.personaltrainer.apolka.personaltrainer.Models;
 
 import java.io.Serializable;
 
-/**
- * Created by Api on 3/8/2018.
- */
 
 public class Exercise implements Serializable {
 

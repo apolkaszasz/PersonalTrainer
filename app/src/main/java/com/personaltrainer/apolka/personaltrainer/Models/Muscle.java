@@ -1,8 +1,5 @@
 package com.personaltrainer.apolka.personaltrainer.Models;
 
-/**
- * Created by Api on 3/8/2018.
- */
 
 public enum Muscle {
     Neck,

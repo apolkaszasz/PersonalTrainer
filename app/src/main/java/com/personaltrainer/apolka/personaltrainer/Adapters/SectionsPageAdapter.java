@@ -1,4 +1,4 @@
-package com.personaltrainer.apolka.personaltrainer;
+package com.personaltrainer.apolka.personaltrainer.Adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

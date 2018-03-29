@@ -4,9 +4,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Date;
 
-/**
- * Created by Api on 3/8/2018.
- */
 
 public class PlannedExercise {
 

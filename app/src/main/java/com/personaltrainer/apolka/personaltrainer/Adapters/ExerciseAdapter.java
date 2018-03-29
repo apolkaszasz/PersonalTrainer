@@ -1,8 +1,6 @@
-package com.personaltrainer.apolka.personaltrainer;
+package com.personaltrainer.apolka.personaltrainer.Adapters;
 
 import android.app.Activity;
-import android.media.Image;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +8,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
+import com.personaltrainer.apolka.personaltrainer.R;
+import com.personaltrainer.apolka.personaltrainer.TabBarFragments.WorkoutsExercisesFragment;
 
 import java.util.List;
 
-/**
- * Created by Api on 3/15/2018.
- */
+
 
 public class ExerciseAdapter extends ArrayAdapter<Exercise> {
 
@@ -41,7 +40,14 @@ public class ExerciseAdapter extends ArrayAdapter<Exercise> {
 
         nameTextView.setVisibility(View.VISIBLE);
         muscleTextView.setVisibility(View.VISIBLE);
-        imageView.setImageResource(R.drawable.q3varo58nxkz);
+        if(exercise.getPhotoUrl() !=null){
+            Glide.with(imageView.getContext())
+                    .load(exercise.getPhotoUrl())
+                    .into(imageView);
+        }
+        else
+            imageView.setImageResource(R.drawable.nopicture);
+
         nameTextView.setText(exercise.getName());
         muscleTextView.setText(exercise.getMuscle().toString());
 

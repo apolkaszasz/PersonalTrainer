@@ -10,7 +10,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.support.v4.app.FragmentTransaction;
-//import com.personaltrainer.apolka.personaltrainer.BottomNavigationBehavior;
+
+import com.personaltrainer.apolka.personaltrainer.NavigationBarFragments.AdvicesFragment;
+import com.personaltrainer.apolka.personaltrainer.NavigationBarFragments.MyPlansFragment;
+import com.personaltrainer.apolka.personaltrainer.NavigationBarFragments.ResultsFragment;
+import com.personaltrainer.apolka.personaltrainer.NavigationBarFragments.WorkoutFragment;
+
 
 
 public class Main2Activity extends AppCompatActivity
@@ -35,7 +40,6 @@ AdvicesFragment.OnFragmentInteractionListener, ResultsFragment.OnFragmentInterac
 
         toolbar = getSupportActionBar();
 
-        //load the MypPlans fragment by default
 
         toolbar.setTitle("MyPlans");
         loadFragment(new MyPlansFragment());
@@ -79,7 +83,6 @@ AdvicesFragment.OnFragmentInteractionListener, ResultsFragment.OnFragmentInterac
     };
 
     private void loadFragment(Fragment fragment) {
-        // load fragment
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
