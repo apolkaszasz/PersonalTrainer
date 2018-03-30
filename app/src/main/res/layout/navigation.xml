@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- TODO Matyas: ez nem egy layout, hanem egy menu, ezert nem itt van a helye, hanem a menu mappaban-->
+<!-- TODO Matyas: Nem is kell megadj mereteket.-->
+<!-- TODO Matyas: Amint mar beszeltuk, jobb lenne vektorokat hasznalni png-k helyett. -->
+<!-- TODO Matyas: A PNG-kel kapcsolatban, a mipmap mappaban is megvannak ugyanazok a png-k, csak tobb meretben, azokat is torolheted.-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">

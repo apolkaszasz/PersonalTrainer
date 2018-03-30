@@ -8,6 +8,7 @@
     android:fitsSystemWindows="true"
     tools:context="com.personaltrainer.apolka.personaltrainer.TabbedActivityWorkouts">
 
+    <!-- TODO Matyas: nem kellene adni top paddinget, mar megadod a magassagat a Toolbarnak, es annal nagyobb nem kellene legyen.-->
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
@@ -15,6 +16,7 @@
         android:paddingTop="@dimen/appbar_padding_top"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+        <!-- TODO Matyas: Weight folosleges, hiszen megadtad mar, hogy match_parent. A weight akkor hasznalna, ha "a megmaradt reszt szeretned betolteni vele, de jelen esetben nem csinal semmit.-->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -22,7 +24,7 @@
             android:layout_weight="1"
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:popupTheme="@style/AppTheme.AppBarOverlay"
             app:title="@string/app_name">
 
         </android.support.v7.widget.Toolbar>

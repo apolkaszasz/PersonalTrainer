@@ -123,6 +123,7 @@ public class WorkoutsExercisesFragment extends Fragment {
 
         gridView = (GridView)getView().findViewById(R.id.mygridview);
 
+//      TODO Matyas: lasd magyarazat az ExerciseItem-ben
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

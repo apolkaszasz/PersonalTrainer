@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- TODO MAtyas: Altalanosan. Van rengeteg olyan ertek a marginoknak, ami standard, es rengeteg helyen ismetled. Igazabol mindent ki kellene vinni a dimens.xml-be,-->
+<!-- de legalabb ezeket, amiket sokszor hasznalsz vidd ki, mert konnyebb lesz utanna. Lesznek ezek a meghatarozott ertekeid (8dp, 16dp) es azokat fogod tudni hasznalni.-->
+<!-- TODO Matyas: A masik dolog, hogy a constraintLayoutnal az toEnd es toRight, illetve toStart es toLeft ugyanazok, ezert duplikalod oket, eleg egyiket (a start-end-eket hasznalni)-->
+<!-- Ugyancsak nem a legjobb otlet megadni a textViewknak a mereteit. Hasznalj inkabb wrap_content-et, mert nem tudhatod sosem, hogy pont mekkora lesz a bele kerulo szoveg.-->
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"

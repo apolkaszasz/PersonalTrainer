@@ -9,6 +9,20 @@ import android.widget.TextView;
 
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 
+/**
+ * TODO Matyas: ha megnezed, azokban a kigeneralt Fragmensekben van egy newInstance metodus. A lenyege, hogy az adott osztalyban
+ * egy statikus metodus hozza letre a peldanyt. Ennek az az ertelme, hogy egy helyen tudod tartani a peldany letrehozasat es az
+ * intentben szereplo key is csak 1 helyen szerepel. Pl. itt egy konstansba kitudod menteni ezt az "EcerciseObject"-et es azt tudod hasznalni
+ * a letrehozaskor es a kiolvasaskor is, ezzel elkerulve azt, hogy egyik helyen ha elirod, akkor nem fog mukodni.
+ *
+ * private static final KEY = "key"
+ * public static Intent newInstance() {
+ *     ...
+ *     intent.putExtra(KEY, valami)
+ * }
+ *
+ * s az onCreatben pedig intent.getExtra(KEY) as ...
+ */
 public class ExerciseItem extends AppCompatActivity {
 
     private static final String TAG = "ExerciseItem";
