@@ -10,10 +10,10 @@
         android:id="@+id/GO_button"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="@dimen/margin8"
+        android:layout_marginEnd="@dimen/margin8"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin8"
         android:text="Go"
          />
 

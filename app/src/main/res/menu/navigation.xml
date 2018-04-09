@@ -5,22 +5,22 @@
 
     <item
         android:id="@+id/navigation_plans"
-        android:icon="@drawable/ic_store_white_24dp"
+        android:icon="@drawable/ic_my_plans_black_24dp"
         android:title="@string/title_plans" />
 
     <item
         android:id="@+id/navigation_workouts"
-        android:icon="@drawable/ic_card_giftcard_white_24dp"
+        android:icon="@drawable/ic_workouts_black_24dp"
         android:title="@string/title_workouts" />
 
     <item
         android:id="@+id/navigation_advices"
-        android:icon="@drawable/ic_shopping_cart_white_24dp"
+        android:icon="@drawable/ic_advice_black_24dp"
         android:title="@string/title_advices" />
 
     <item
         android:id="@+id/navigation_results"
-        android:icon="@drawable/ic_person_white_24dp"
+        android:icon="@drawable/ic_result_black_24dp"
         android:title="@string/title_results" />
 
 </menu>

@@ -4,10 +4,24 @@
     android:layout_height="match_parent"
     tools:context="com.personaltrainer.apolka.personaltrainer.TabBarFragments.ProgramsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Programmes List" />
+        android:id="@+id/mygridviewPrograms"
+        android:paddingTop="15dp"
+        android:clipToPadding="false"
+        android:paddingBottom="15dp"
+        android:columnWidth="100dp"
+        android:gravity="center|bottom"
+        android:horizontalSpacing="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:numColumns="3"
+        android:stretchMode="spacingWidth"
+        android:verticalSpacing="20dp"
+        android:visibility="visible"
+        android:scrollbars="none"
+        />
 
 </FrameLayout>
