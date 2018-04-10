@@ -42,7 +42,7 @@ public class TabbedActivityWorkouts extends AppCompatActivity implements Workout
     private void setupViewPager(ViewPager viewPager){
         SectionsPageAdapter adapter = new SectionsPageAdapter((getSupportFragmentManager()));
         adapter.addFragment(new WorkoutsExercisesFragment(),"Exercises");
-        adapter.addFragment(new ProgramsFragment(),"Programs");
+        adapter.addFragment(new ProgramsFragment() ,"Programs");
         viewPager.setAdapter(adapter);
     }
 }

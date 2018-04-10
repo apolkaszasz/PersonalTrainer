@@ -23,7 +23,7 @@
         android:foreground="?attr/selectableItemBackground"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
-        app:menu="@layout/navigation" />
+        app:menu="@menu/navigation" />
 
 
 </android.support.design.widget.CoordinatorLayout>

@@ -23,7 +23,8 @@
             android:name=".TabbedActivityWorkouts"
             android:label="@string/title_activity_tabbed_workouts"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ExerciseItem"></activity>
+        <activity android:name=".ExerciseItem" />
+        <activity android:name=".ProgramItem" />
     </application>
 
 </manifest>

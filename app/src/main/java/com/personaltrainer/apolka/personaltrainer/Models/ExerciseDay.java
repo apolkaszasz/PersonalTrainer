@@ -5,17 +5,17 @@ import java.util.List;
 public class ExerciseDay {
 
     private String dayId;
-    private List<String> exerciseList;
+    private List<String> exercises;
 
     ExerciseDay(){}
     ExerciseDay(String dayId, List<String> exerciseList){
         this.dayId = dayId;
-        this.exerciseList = exerciseList;
+        this.exercises = exerciseList;
     }
 
     public String getDayId(){return this.dayId;}
-    public List<String> getExerciseList(){return  this.exerciseList;}
+    public List<String> getExercises(){return  this.exercises;}
 
     public void setDayId(String dayId){this.dayId = dayId;}
-    public void setExerciseList(List<String> exerciseList){this.exerciseList = exerciseList;}
+    public void setExercises(List<String> exercises){this.exercises = exercises;}
 }

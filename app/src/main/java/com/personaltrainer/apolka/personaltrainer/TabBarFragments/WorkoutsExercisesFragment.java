@@ -128,9 +128,10 @@ public class WorkoutsExercisesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Exercise exercise = (Exercise) adapterView.getAdapter().getItem(i);
-                Intent intent = new Intent(getActivity(), ExerciseItem.class);
-                intent.putExtra("EcerciseObject", exercise);
-                startActivity(intent);
+                //Intent intent = new Intent(getActivity(), ExerciseItem.class);
+                //intent.putExtra("EcerciseObject", exercise);
+                startActivity(ExerciseItem.getStartIntent(getContext(), exercise));
+                //startActivity(intent);
 
             }
         });
