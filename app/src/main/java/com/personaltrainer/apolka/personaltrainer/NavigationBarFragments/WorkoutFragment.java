@@ -2,19 +2,22 @@ package com.personaltrainer.apolka.personaltrainer.NavigationBarFragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.personaltrainer.apolka.personaltrainer.R;
 import com.personaltrainer.apolka.personaltrainer.TabbedActivityWorkouts;
 
 
-public class WorkoutFragment extends Fragment implements View.OnClickListener{
+public class WorkoutFragment extends Fragment{
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -58,9 +61,21 @@ public class WorkoutFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_workout, container, false);
-        go_button = (Button)view.findViewById(R.id.GO_button);
 
-        go_button.setOnClickListener(this);
+        FloatingActionButton mfloatingActionButton = (FloatingActionButton)view.findViewById(R.id.AllFloatingButton);
+        mfloatingActionButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                tabbedActivityWorkouts();
+            }
+        });
+
+        ImageView abs = (ImageView)view.findViewById(R.id.imageViewAbs);
+        abs.setColorFilter(Color.rgb(255,64,129));
+
+        ImageView abductors = (ImageView)view.findViewById(R.id.imageViewAbductors);
+        abductors.setColorFilter(Color.rgb(255,64,129));
+
         return view;
     }
 
@@ -91,15 +106,7 @@ public class WorkoutFragment extends Fragment implements View.OnClickListener{
         void onFragmentInteraction(Uri uri);
     }
 
-    @Override
-    public void onClick(View v){
-        switch (v.getId()){
-            case R.id.GO_button:
-                tabbedActivityWorkouts();
-                break;
 
-        }
-    }
     private void tabbedActivityWorkouts(){
         Intent i = new Intent(getActivity(), TabbedActivityWorkouts.class);
         startActivity(i);

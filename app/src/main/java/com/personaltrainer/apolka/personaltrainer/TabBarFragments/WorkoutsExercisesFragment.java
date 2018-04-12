@@ -74,7 +74,7 @@ public class WorkoutsExercisesFragment extends Fragment {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("Exercises");
 
-        mMessagesDatabaseReference.addValueEventListener(new ValueEventListener() {
+       /* mMessagesDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot exercisedataSnapshot: dataSnapshot.getChildren()){
@@ -89,7 +89,7 @@ public class WorkoutsExercisesFragment extends Fragment {
             public void onCancelled(DatabaseError error) {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
-        });
+        });*/
 
 
 
