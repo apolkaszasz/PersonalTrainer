@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
+import com.personaltrainer.apolka.personaltrainer.ProgramItem;
 import com.personaltrainer.apolka.personaltrainer.R;
 import com.personaltrainer.apolka.personaltrainer.TabBarFragments.WorkoutsExercisesFragment;
 
@@ -22,6 +23,9 @@ public class ExerciseAdapter extends ArrayAdapter<Exercise> {
 
     public ExerciseAdapter(@NonNull WorkoutsExercisesFragment context, int resource, List<Exercise> objects) {
         super(context.getActivity(), resource, objects);
+    }
+    public ExerciseAdapter(@NonNull ProgramItem context, int resource, List<Exercise> objects) {
+        super(context, resource, objects);
     }
 
     @Override

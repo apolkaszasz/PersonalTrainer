@@ -75,7 +75,7 @@ public class ProgramsFragment extends Fragment {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = mFirebaseDatabase.getReference().child("Programs");
 
-        mDatabaseReference.addValueEventListener(new ValueEventListener() {
+        /*mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot  programDataSnapshot: dataSnapshot.getChildren()){
@@ -90,7 +90,7 @@ public class ProgramsFragment extends Fragment {
 
                 Log.w(TAG, "Failed to read value", databaseError.toException());
             }
-        });
+        });*/
     }
 
     @Override
@@ -155,6 +155,12 @@ public class ProgramsFragment extends Fragment {
 
         detachDatabaseReadListener();
         mProgramAdapter.clear();
+    }
+    public void onResume(){
+        super.onResume();
+
+        attachDatabaseReadListener();
+
     }
 
     private void detachDatabaseReadListener(){

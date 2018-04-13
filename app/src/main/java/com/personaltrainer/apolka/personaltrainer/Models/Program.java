@@ -1,6 +1,7 @@
 package com.personaltrainer.apolka.personaltrainer.Models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,6 +30,14 @@ public class Program  implements Serializable {
     public int getDurationInWeeks(){return this.DurationInWeeks;}
     public List<Integer> getDaysListPerWeek(){return this.DaysListPerWeek;}
     public List<ExerciseDay> getExerciseList(){return this.exerciseList;}
+    public List<String> getExercisesByDayId(int dayId){
+        for(ExerciseDay exday:this.exerciseList){
+            if (exday.getDayId() == dayId){
+                return exday.getExercises();
+            }
+        }
+        return new ArrayList<>();
+    }
     public String getPhotoUrl(){return this.PhotoUrl;}
 
     public void setName(String name){this.Name = name;}

@@ -22,6 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.personaltrainer.apolka.personaltrainer.Adapters.ExerciseAdapter;
 import com.personaltrainer.apolka.personaltrainer.ExerciseItem;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
+import com.personaltrainer.apolka.personaltrainer.Models.Program;
+import com.personaltrainer.apolka.personaltrainer.ProgramItem;
 import com.personaltrainer.apolka.personaltrainer.R;
 
 import java.util.ArrayList;
@@ -37,6 +39,8 @@ public class WorkoutsExercisesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private String muscleFilter;
+
     private OnFragmentInteractionListener mListener;
 
 
@@ -49,8 +53,12 @@ public class WorkoutsExercisesFragment extends Fragment {
     private DatabaseReference mMessagesDatabaseReference;
     private ChildEventListener mChildEventListener;
 
+
+
     public WorkoutsExercisesFragment() {
     }
+
+
 
 
     public static WorkoutsExercisesFragment newInstance(String param1, String param2) {
