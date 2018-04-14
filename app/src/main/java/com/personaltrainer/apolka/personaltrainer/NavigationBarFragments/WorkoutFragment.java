@@ -310,10 +310,10 @@ public class WorkoutFragment extends Fragment{
 
     }
 
-    private String clickPosition_Muscle(float x, float y){
+    private String clickPosition_Muscle(double x, double y){
         String muscle = "";
         for (Square sq: abductorsSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Abductors";
@@ -321,7 +321,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: absSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Abs";
@@ -329,7 +329,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: bicepsSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Biceps";
@@ -337,7 +337,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: calvesSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Calves";
@@ -345,7 +345,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: chestSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Chest";
@@ -353,7 +353,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: feetSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Feet";
@@ -361,7 +361,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: forearmsSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Forearms";
@@ -369,7 +369,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: glutesSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Glutes";
@@ -378,7 +378,7 @@ public class WorkoutFragment extends Fragment{
         }
 
         for (Square sq: hamstringsSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Hamstrings";
@@ -386,7 +386,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: handsSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Hands";
@@ -394,7 +394,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: latsSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Lats";
@@ -402,7 +402,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: neckSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Neck";
@@ -410,7 +410,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: obliquesSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Obliques";
@@ -418,7 +418,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: quadsSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Quads";
@@ -426,7 +426,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: shouldersSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Shoulders";
@@ -434,7 +434,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: tricepsSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Triceps";
@@ -442,7 +442,7 @@ public class WorkoutFragment extends Fragment{
             }
         }
         for (Square sq: upperbackSquareList){
-            float proportion = 1104/480;
+            double proportion = 2.3;
             Square convertedSquare = new Square(sq.getX_begin()*proportion,sq.getY_begin()*proportion,sq.getX_end()*proportion,sq.getY_end()*proportion);
             if(x>convertedSquare.getX_begin() && y>convertedSquare.getY_begin() && x<convertedSquare.getX_end() && y<convertedSquare.getY_end()){
                 muscle = "Upper back";
