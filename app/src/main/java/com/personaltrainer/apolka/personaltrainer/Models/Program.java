@@ -7,28 +7,28 @@ import java.util.List;
 
 
 public class Program  implements Serializable {
-    private String Name;
-    private String Description;
-    private int DurationInWeeks;
-    private List<Integer> DaysListPerWeek;  //[0,1,1,1,0,1,1] for ex
+    private String name;
+    private String description;
+    private int durationInWeeks;
+    private List<Integer> daysListPerWeek;  //[0,1,1,1,0,1,1] for ex
     private List<ExerciseDay> exerciseList;
-    private String PhotoUrl;
+    private String photoUrl;
 
     public Program(){}
     public Program(String name, String description, int durationInWeeks, List<Integer> daysListPerWeek, List<ExerciseDay> exerciseList){
-        this.Name = name;
-        this.Description = description;
-        this.DurationInWeeks = durationInWeeks;
-        this.DaysListPerWeek = daysListPerWeek;
+        this.name = name;
+        this.description = description;
+        this.durationInWeeks = durationInWeeks;
+        this.daysListPerWeek = daysListPerWeek;
         this.exerciseList = exerciseList;
 
 
     }
 
-    public String getName(){return this.Name;}
-    public String getDescription(){return  this.Description;}
-    public int getDurationInWeeks(){return this.DurationInWeeks;}
-    public List<Integer> getDaysListPerWeek(){return this.DaysListPerWeek;}
+    public String getName(){return this.name;}
+    public String getDescription(){return  this.description;}
+    public int getDurationInWeeks(){return this.durationInWeeks;}
+    public List<Integer> getDaysListPerWeek(){return this.daysListPerWeek;}
     public List<ExerciseDay> getExerciseList(){return this.exerciseList;}
     public List<String> getExercisesByDayId(int dayId){
         for(ExerciseDay exday:this.exerciseList){
@@ -38,14 +38,14 @@ public class Program  implements Serializable {
         }
         return new ArrayList<>();
     }
-    public String getPhotoUrl(){return this.PhotoUrl;}
+    public String getPhotoUrl(){return this.photoUrl;}
 
-    public void setName(String name){this.Name = name;}
-    public void setDescription(String description){this.Description = description;}
-    public void setDurationInWeeks(int durationInWeeks){this.DurationInWeeks = durationInWeeks;}
-    public void setDaysListPerWeek(List<Integer> daysListPerWeek){this.DaysListPerWeek = daysListPerWeek;}
+    public void setName(String name){this.name = name;}
+    public void setDescription(String description){this.description = description;}
+    public void setDurationInWeeks(int durationInWeeks){this.durationInWeeks = durationInWeeks;}
+    public void setDaysListPerWeek(List<Integer> daysListPerWeek){this.daysListPerWeek = daysListPerWeek;}
     public void setExerciseList(List<ExerciseDay> exerciseList){this.exerciseList = exerciseList;}
-    public void setPhotoUrl(String photoUrl){this.PhotoUrl = photoUrl;}
+    public void setPhotoUrl(String photoUrl){this.photoUrl = photoUrl;}
 
 }
 
