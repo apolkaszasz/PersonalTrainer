@@ -2,6 +2,7 @@ package com.personaltrainer.apolka.personaltrainer.NavigationBarFragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,7 +18,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.personaltrainer.apolka.personaltrainer.ExerciseItem;
+import com.personaltrainer.apolka.personaltrainer.MainActivity;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.Square;
 import com.personaltrainer.apolka.personaltrainer.R;
@@ -32,6 +36,7 @@ public class WorkoutFragment extends Fragment{
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String TAG = "WorkoutFragment";
+    private SharedPreferences sharedPreferences;
 
     private String choosedMuscle;
 
@@ -102,6 +107,7 @@ public class WorkoutFragment extends Fragment{
 
 
 
+
         }
     }
 
@@ -112,7 +118,14 @@ public class WorkoutFragment extends Fragment{
 
         View view = inflater.inflate(R.layout.fragment_workout, container, false);
 
+        Context context = getActivity();
+        sharedPreferences = context.getSharedPreferences(
+                "userPreferences",0);
+        Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
+
         initializeMuscleSquareLists();
+
+
 
         FloatingActionButton mfloatingActionButton = (FloatingActionButton)view.findViewById(R.id.AllFloatingButton);
         mfloatingActionButton.setOnClickListener(new View.OnClickListener(){
@@ -452,6 +465,7 @@ public class WorkoutFragment extends Fragment{
         return muscle;
     }
     private void initializeMuscleSquareLists(){
+        Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
         abductorsSquareList = new ArrayList<Square>();
         absSquareList  = new ArrayList<Square>();
          bicepsSquareList  = new ArrayList<Square>();

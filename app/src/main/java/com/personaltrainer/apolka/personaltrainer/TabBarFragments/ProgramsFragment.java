@@ -2,6 +2,7 @@ package com.personaltrainer.apolka.personaltrainer.TabBarFragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -35,6 +36,7 @@ public class ProgramsFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String TAG = "ProgramFragment";
+    private SharedPreferences sharedPreferences;
 
 
     private String mParam1;
@@ -72,6 +74,12 @@ public class ProgramsFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
+
+        Context context = getActivity();
+        sharedPreferences = context.getSharedPreferences(
+                "userPreferences",0);
+        Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = mFirebaseDatabase.getReference().child("Programs");
 

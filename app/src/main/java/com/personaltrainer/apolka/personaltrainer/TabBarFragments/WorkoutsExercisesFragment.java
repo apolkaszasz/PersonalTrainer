@@ -2,6 +2,7 @@ package com.personaltrainer.apolka.personaltrainer.TabBarFragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -35,6 +36,8 @@ public class WorkoutsExercisesFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String TAG = "WorkoutFragment";
+
+    private SharedPreferences sharedPreferences;
 
     private String mParam1;
     private String mParam2;
@@ -78,6 +81,10 @@ public class WorkoutsExercisesFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+        Context context = getActivity();
+        sharedPreferences = context.getSharedPreferences(
+                "userPreferences",0);
+        Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("Exercises");
@@ -138,6 +145,7 @@ public class WorkoutsExercisesFragment extends Fragment {
                 Exercise exercise = (Exercise) adapterView.getAdapter().getItem(i);
                 //Intent intent = new Intent(getActivity(), ExerciseItem.class);
                 //intent.putExtra("EcerciseObject", exercise);
+
                 startActivity(ExerciseItem.getStartIntent(getContext(), exercise));
                 //startActivity(intent);
 

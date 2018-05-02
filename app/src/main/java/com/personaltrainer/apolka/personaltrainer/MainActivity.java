@@ -1,10 +1,13 @@
 package com.personaltrainer.apolka.personaltrainer;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.constraint.solver.widgets.WidgetContainer;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,10 +36,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     TextView statusTextView;
     ImageView  imageViewProfilePicture;
     GoogleApiClient mGoogleApiClient;
+    FloatingActionButton GOButton;
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
+
+    SharedPreferences sharedpreferences;
+    public static final String userPreferences = "userPreferences" ;
 
 
     @Override
@@ -44,6 +51,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+        sharedpreferences = getSharedPreferences(userPreferences, 0);
+
+
+        GOButton = (FloatingActionButton) findViewById(R.id.Exer);
+        GOButton.setVisibility(View.INVISIBLE);
+        GOButton.setOnClickListener(this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -116,6 +130,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         Log.d(TAG,"handleSignInResult" + result.isSuccess());
         if (result.isSuccess()){
             GoogleSignInAccount acct = result.getSignInAccount();
+
+            Log.d(TAG,"signed in token: "+acct.getId());
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+
+            editor.putString("UserID", acct.getId());
+            editor.commit();
+
+            Log.d(TAG,"the reference value is.............."+sharedpreferences.getString("UserID",null));
+
+            GOButton.setVisibility(View.VISIBLE);
             if (acct.getPhotoUrl().toString() != null){
                 Glide.with(this).load(acct.getPhotoUrl().toString()).into(imageViewProfilePicture);
             }
@@ -138,6 +162,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             public void onResult(@NonNull Status status) {
                 statusTextView.setText("Signed Out");
                 imageViewProfilePicture.setImageResource(R.drawable.user_icon);
+                sharedpreferences.edit().remove("UserID").commit();
+
+                Log.d(TAG,"................."+sharedpreferences.getString("UserID",null));
+                GOButton.setVisibility(View.INVISIBLE);
             }
         });
     }

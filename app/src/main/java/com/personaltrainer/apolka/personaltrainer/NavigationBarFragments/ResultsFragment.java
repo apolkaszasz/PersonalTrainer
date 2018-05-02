@@ -1,9 +1,11 @@
 package com.personaltrainer.apolka.personaltrainer.NavigationBarFragments;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,10 @@ public class ResultsFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private SharedPreferences sharedPreferences;
+
+    private static final String TAG = "ResultsFragment";
+
 
     private String mParam1;
     private String mParam2;
@@ -45,6 +51,11 @@ public class ResultsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Context context = getActivity();
+        sharedPreferences = context.getSharedPreferences(
+                "userPreferences",0);
+        Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
+
         return inflater.inflate(R.layout.fragment_results, container, false);
     }
 

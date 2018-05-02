@@ -13,17 +13,17 @@ public class PlannedExercise {
     private int plannedSets;
     private int plannedRepetitionsToIncreaseWith;
     private boolean isPartOfaProgram;
-    private FirebaseUser user;
+    private String userId;
 
     public PlannedExercise(){};
-    public PlannedExercise(String exercise, Date date, int plannedRepetitions, int plannedSets, int plannedRepetitionsToIncreaseWith,boolean isPartOfaProgram, FirebaseUser user){
+    public PlannedExercise(String exercise, Date date, int plannedRepetitions, int plannedSets, int plannedRepetitionsToIncreaseWith,boolean isPartOfaProgram, String userId){
         this.exerciseName = exercise;
         this.date = date;
         this.plannedRepetitions = plannedRepetitions;
         this.plannedSets = plannedSets;
         this.plannedRepetitionsToIncreaseWith = plannedRepetitionsToIncreaseWith;
         this.isPartOfaProgram = isPartOfaProgram;
-        this.user = user;
+        this.userId = userId;
     }
 
     public String getExercise(){return this.exerciseName;}
@@ -32,7 +32,7 @@ public class PlannedExercise {
     public int getPlannedSets(){return this.plannedSets;}
     public int getPlannedRepetitionsToIncreaseWith(){return this.plannedRepetitionsToIncreaseWith;}
     public boolean getIsPartOfaProgram(){return this.isPartOfaProgram;}
-    public FirebaseUser getUser(){return this.user;}
+    public String getUser(){return this.userId;}
 
 
     public void setExercise(String exercise){this.exerciseName = exercise;}
@@ -41,5 +41,5 @@ public class PlannedExercise {
     public void setPlannedSets(int plannedSets){this.plannedSets = plannedSets;}
     public void setPlannedRepetitionsToIncreaseWith(int plannedRepetitionsToIncreaseWith){this.plannedRepetitionsToIncreaseWith = plannedRepetitionsToIncreaseWith;}
     public void setIsPartOfaProgram(boolean isPartOfaProgram){this.isPartOfaProgram = isPartOfaProgram;}
-    public void setUser(FirebaseUser user){this.user = user;}
+    public void setUser(String user){this.userId = user;}
 }

@@ -3,6 +3,7 @@ package com.personaltrainer.apolka.personaltrainer;
 import android.content.Context;
 import android.content.Intent;
 import android.media.audiofx.AudioEffect;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -41,6 +42,7 @@ public class ProgramItem extends AppCompatActivity {
     private TextView programDescription;
     private TextView programDurationInWeeks;
     private TextView programWorkoutdays;
+    private FloatingActionButton addButton;
 
     private List<String> dayList;
     private List<String> workoutDayList;
@@ -98,6 +100,13 @@ public class ProgramItem extends AppCompatActivity {
         programWorkoutdays = (TextView) findViewById(R.id.ProgramWorkoutDaysTextViewValue);
         programWorkoutdays.setText(TextUtils.join(", ", workoutDayList));
 
+        addButton = (FloatingActionButton)findViewById(R.id.AddThisProgramToPlansFloatingButton);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                newPlannedProgram();
+            }}
+        );
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("Exercises").child("");
@@ -233,5 +242,9 @@ public class ProgramItem extends AppCompatActivity {
             mChildEventListener = null;
         }}
 
+    private void newPlannedProgram(){
+        startActivity(NewPlannedProgram.getStartIntent(this, program));
+
+    }
 
 }

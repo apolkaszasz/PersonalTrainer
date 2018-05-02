@@ -25,6 +25,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ExerciseItem" />
         <activity android:name=".ProgramItem" />
+        <activity android:name=".NewPlannedExercise" />
+        <activity android:name=".NewPlannedProgram"></activity>
     </application>
 
 </manifest>

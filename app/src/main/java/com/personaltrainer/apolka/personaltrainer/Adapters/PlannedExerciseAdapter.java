@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
+import com.personaltrainer.apolka.personaltrainer.NavigationBarFragments.MyPlansFragment;
+import com.personaltrainer.apolka.personaltrainer.NewPlannedExercise;
 
 import java.util.List;
 
@@ -16,8 +18,12 @@ import java.util.List;
 
 public class PlannedExerciseAdapter extends ArrayAdapter<PlannedExercise>{
 
-    public PlannedExerciseAdapter(Fragment context,int resource, List<PlannedExercise> objects){
+    public PlannedExerciseAdapter(MyPlansFragment context, int resource, List<PlannedExercise> objects){
         super(context.getActivity(),resource,objects);
+    }
+
+    public PlannedExerciseAdapter(NewPlannedExercise context, int resource, List<PlannedExercise> objects){
+        super(context,resource,objects);
     }
 
     @Override

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.personaltrainer.apolka.personaltrainer.NewPlannedExercise">
+
+
+
+    <TextView
+        android:id="@+id/NewExerciseNameTextView"
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd= "@dimen/margin8"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/colorTextViewValue"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/NewExerceMuscleTextView"
+        android:layout_width="310dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:textColor="@color/colorTextViewValue"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewExerciseNameTextView" />
+
+    <TextView
+        android:id="@+id/NewDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text="Date: "
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewExerceMuscleTextView"
+        />
+
+    <TextView
+        android:id="@+id/dateTextViewValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:background="@color/common_action_bar_splitter"
+        android:clickable="true"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewDateTextView" />
+
+
+    <TextView
+        android:id="@+id/NewExerciseRecommendedrepetitionsTextView"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text="Repetitions: "
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextViewValue" />
+
+
+    <EditText
+        android:id="@+id/NewExerciseRecRepNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin8"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:orientation="horizontal"
+        android:inputType="number"
+        android:text=""
+        android:textAlignment="viewEnd"
+        android:textColor="@color/colorTextViewValue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/NewExerciseRecommendedrepetitionsTextView"
+        app:layout_constraintStart_toEndOf="@+id/NewExerciseRecommendedrepetitionsTextView"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextViewValue" />
+
+    <TextView
+        android:id="@+id/NewExerciseRecommendedSetstextView"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="16dp"
+        android:text="Sets: "
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewExerciseRecommendedrepetitionsTextView" />
+
+    <EditText
+        android:id="@+id/NewExerciseRecSetsNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin8"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:inputType="number"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/colorTextViewValue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/NewExerciseRecommendedrepetitionsTextView"
+        app:layout_constraintStart_toEndOf="@+id/NewExerciseRecommendedrepetitionsTextView"
+        app:layout_constraintTop_toBottomOf="@+id/NewExerciseRecommendedrepetitionsTextView" />
+
+
+
+    <Button
+        android:id="@+id/addExerciseToMyPlans"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Add To Plans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewExerciseRecommendedSetstextView" />
+
+
+</android.support.constraint.ConstraintLayout>
