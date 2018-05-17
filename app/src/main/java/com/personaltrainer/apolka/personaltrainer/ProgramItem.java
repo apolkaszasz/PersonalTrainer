@@ -121,12 +121,15 @@ public class ProgramItem extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                exerciseKeylist = new ArrayList<>();
                 populateCurrentDaysExercisesListView(dataAdapter.getItem(position));
                 attachDatabaseReadListener();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
+
+                exerciseKeylist = new ArrayList<>();
 
                 populateCurrentDaysExercisesListView(dataAdapter.getItem(0));
                 attachDatabaseReadListener();
@@ -142,6 +145,7 @@ public class ProgramItem extends AppCompatActivity {
         exerciseKeylist = new ArrayList<>();
         switch (day){
             case "Monday":
+                Log.d(TAG,"mondaaaay,.............");
                 exerciseKeylist = program.getExercisesByDayId(0);
                 break;
             case "Tuesday":
@@ -195,7 +199,7 @@ public class ProgramItem extends AppCompatActivity {
     public void onResume(){
         super.onResume();
 
-        attachDatabaseReadListener();
+        //attachDatabaseReadListener();
 
     }
     private void detachDatabaseReadListener(){

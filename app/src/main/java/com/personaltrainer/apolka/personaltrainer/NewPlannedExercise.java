@@ -146,6 +146,8 @@ public class NewPlannedExercise extends AppCompatActivity {
             dateTime.set(Calendar.YEAR,year);
             dateTime.set(Calendar.MONTH,month);
             dateTime.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+            Log.d(TAG, "a nap neve............"+dateTime.get(Calendar.DAY_OF_WEEK));
+
             dateTextView.setText(dateFormat.format(dateTime.getTime()));
         }
     };
