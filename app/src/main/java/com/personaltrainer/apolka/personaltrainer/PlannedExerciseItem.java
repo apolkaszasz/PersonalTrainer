@@ -5,12 +5,18 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
 
-public class PlannedExerciseItem extends AppCompatActivity {
+public class PlannedExerciseItem extends YouTubeBaseActivity {
 
     private Exercise exercise;
     private PlannedExercise plannedExercise ;
@@ -23,6 +29,10 @@ public class PlannedExerciseItem extends AppCompatActivity {
     private TextView RepTextViewNumber;
     private TextView SetsTextViewNumber;
     private TextView DescriptionTextView;
+
+    private YouTubePlayerView youTubePlayerView;
+    private YouTubePlayer.OnInitializedListener onInitializedListener;
+
 
     public static Intent getStartIntent(Context context, Exercise exercise, PlannedExercise plannedExercise) {
         return new Intent(context, PlannedExerciseItem.class)
@@ -56,5 +66,22 @@ public class PlannedExerciseItem extends AppCompatActivity {
 
         DescriptionTextView = (TextView)findViewById(R.id.DescriptionValueMyPlans);
         DescriptionTextView.setText(exercise.getDescription());
+
+        youTubePlayerView = (YouTubePlayerView)findViewById(R.id.youtubeVideo);
+        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+
+                youTubePlayer.loadVideo(exercise.getVideoUrl());
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+            }
+        };
+
+        youTubePlayerView.initialize("AIzaSyDHwoaS9Go7vu-fXFAtIBepN7qPa9C0B2o",onInitializedListener);
+
     }
 }

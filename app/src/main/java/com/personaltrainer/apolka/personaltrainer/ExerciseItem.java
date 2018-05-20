@@ -10,12 +10,16 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.widget.TextView;
 
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 
 import static android.provider.Contacts.SettingsColumns.KEY;
 import static java.security.AccessController.getContext;
 
-public class ExerciseItem extends AppCompatActivity {
+public class ExerciseItem extends YouTubeBaseActivity {
 
     private static final String TAG = "ExerciseItem";
     private static final String EXERCISE_OBJ_KEY = "Exercise_Obj_Key";
@@ -25,6 +29,8 @@ public class ExerciseItem extends AppCompatActivity {
     private TextView RecSetsTextViewNumber;
     private TextView DescriptionTextView;
     private FloatingActionButton addButton;
+    private YouTubePlayerView youTubePlayerView;
+    private YouTubePlayer.OnInitializedListener onInitializedListener;
 
     private Exercise exercise;
     public static Intent getStartIntent(Context context, Exercise exercise) {
@@ -64,6 +70,23 @@ public class ExerciseItem extends AppCompatActivity {
                 newPlannedExercise();
             }}
         );
+
+        youTubePlayerView = (YouTubePlayerView)findViewById(R.id.youtubeVideo2);
+        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+            @Override
+            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+
+                youTubePlayer.loadVideo(exercise.getVideoUrl());
+            }
+
+            @Override
+            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+            }
+        };
+
+        youTubePlayerView.initialize("AIzaSyDHwoaS9Go7vu-fXFAtIBepN7qPa9C0B2o",onInitializedListener);
+
 
 
 
