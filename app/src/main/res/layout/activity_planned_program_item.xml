@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.personaltrainer.apolka.personaltrainer.PlannedProgramItem">
+
+
+    <TextView
+        android:id="@+id/ProgramNameTextViewMyPlans"
+        android:layout_height="48dp"
+        android:layout_width="310dp"
+        android:layout_marginEnd= "@dimen/margin8"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text=""
+        android:textColor="@color/colorTextViewValue"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <TextView
+        android:id="@+id/ProgramDescriptionTextViewMyPlans"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text="Description: "
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProgramNameTextViewMyPlans"
+        />
+
+    <TextView
+        android:id="@+id/ProgramDescriptionValueMyPlans"
+        android:layout_width="319dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin8"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text=""
+        android:textColor="@color/colorTextViewValue"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        android:scrollHorizontally="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProgramDescriptionTextViewMyPlans" />
+
+    <TextView
+        android:id="@+id/ProgramDurationInWeeksTextViewMyPlans"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text="Duration(in weeks): "
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProgramDescriptionValueMyPlans" />
+
+    <TextView
+        android:id="@+id/ProgramDurationInWeeksTextViewValueMyPlans"
+        android:layout_width="68dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="@dimen/margin8"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text=""
+        android:textColor="@color/colorTextViewValue"
+        android:textAlignment="viewEnd"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/ProgramDurationInWeeksTextViewMyPlans"
+        app:layout_constraintStart_toEndOf="@+id/ProgramDurationInWeeksTextViewMyPlans"
+        app:layout_constraintTop_toBottomOf="@+id/ProgramDescriptionValueMyPlans" />
+    <TextView
+        android:id="@+id/ProgramStartDateTextViewMyPlans"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text="Start date: "
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProgramDurationInWeeksTextViewValueMyPlans" />
+
+    <TextView
+        android:id="@+id/ProgramStartDateTextViewValueMyPlans"
+        android:layout_width="310dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textColor="@color/colorTextViewValue"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProgramStartDateTextViewMyPlans" />
+
+    <TextView
+        android:id="@+id/ProgramExercisesTextViewMyPlans"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="@dimen/margin8"
+        android:layout_marginTop="@dimen/margin16"
+        android:text="Exercise list: "
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProgramStartDateTextViewValueMyPlans" />
+
+
+    <GridView
+        android:id="@+id/CurrentdayExerciseGridViewMyPlans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:clipToPadding="false"
+        android:paddingBottom="15dp"
+        android:columnWidth="100dp"
+        android:gravity="center|bottom"
+        android:horizontalSpacing="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:numColumns="3"
+        android:stretchMode="spacingWidth"
+        android:verticalSpacing="20dp"
+        android:visibility="visible"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@+id/ProgramExercisesTextViewMyPlans"
+        />
+
+</android.support.constraint.ConstraintLayout>
+</ScrollView>

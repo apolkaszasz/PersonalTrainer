@@ -18,39 +18,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity"
+        <activity
+            android:name=".Main2Activity"
             android:parentActivityName=".MainActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-            </activity>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".TabbedActivityWorkouts"
             android:label="@string/title_activity_tabbed_workouts"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".Main2Activity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Main2Activity"/>
-            </activity>
-        <activity android:name=".ExerciseItem"
-            android:parentActivityName=".TabbedActivityWorkouts">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TabbedActivityWorkouts"/>
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Main2Activity" />
         </activity>
-        <activity android:name=".ProgramItem"
+        <activity
+            android:name=".ExerciseItem"
             android:parentActivityName=".TabbedActivityWorkouts">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TabbedActivityWorkouts"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TabbedActivityWorkouts" />
         </activity>
-        <activity android:name=".NewPlannedExercise"
+        <activity
+            android:name=".ProgramItem"
             android:parentActivityName=".TabbedActivityWorkouts">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TabbedActivityWorkouts"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TabbedActivityWorkouts" />
         </activity>
-        <activity android:name=".NewPlannedProgram"
+        <activity
+            android:name=".NewPlannedExercise"
             android:parentActivityName=".TabbedActivityWorkouts">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TabbedActivityWorkouts"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TabbedActivityWorkouts" />
         </activity>
+        <activity
+            android:name=".NewPlannedProgram"
+            android:parentActivityName=".TabbedActivityWorkouts">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TabbedActivityWorkouts" />
+        </activity>
+        <activity android:name=".PlannedExerciseItem" />
+        <activity android:name=".PlannedProgramItem"></activity>
     </application>
 
 </manifest>

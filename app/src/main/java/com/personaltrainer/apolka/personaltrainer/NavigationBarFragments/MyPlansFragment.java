@@ -32,6 +32,8 @@ import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedProgram;
 import com.personaltrainer.apolka.personaltrainer.Models.Program;
+import com.personaltrainer.apolka.personaltrainer.PlannedExerciseItem;
+import com.personaltrainer.apolka.personaltrainer.PlannedProgramItem;
 import com.personaltrainer.apolka.personaltrainer.R;
 
 import java.io.Serializable;
@@ -55,6 +57,7 @@ public class MyPlansFragment extends Fragment {
     private ExerciseAdapter mExerciseAdapter;
     private ProgramAdapter mProgramAdapter;
     private Map<String, Program> allPrograms;
+    private Map<String, Exercise> allExercises;
     private List<PlannedExercise> mPlannedExerciseList;
     private List<PlannedProgram> mPlannedProgramList;
     private List<String> keyList;
@@ -143,6 +146,9 @@ public class MyPlansFragment extends Fragment {
     }
     private void createTodaysProgramKEYList(){
         List<PlannedProgram> aux = new ArrayList<>();
+        if(mProgramAdapter!=null){
+            mProgramAdapter.clear();
+        }
         pKeyList.clear();
         Log.d(TAG,"hereeeeeeeeeeeeeeeeeeee" + mPlannedProgramList.size());
         for(int i=0;i<mPlannedProgramList.size();i++){
@@ -234,8 +240,14 @@ public class MyPlansFragment extends Fragment {
 
 
         detachDatabaseReadListener();
-        mExerciseAdapter.clear();
-        mProgramAdapter.clear();
+        if (mProgramAdapter!=null){
+            mProgramAdapter.clear();
+        }
+        if (mExerciseAdapter!=null){
+            mExerciseAdapter.clear();
+        }
+
+
 
     }
     @Override
@@ -314,6 +326,7 @@ public class MyPlansFragment extends Fragment {
                 mPlannedExerciseList.clear();
                 mPlannedProgramList.clear();
                 allPrograms.clear();
+                allExercises.clear();
 
                 attachDatabaseReadListener();
 
@@ -341,8 +354,57 @@ public class MyPlansFragment extends Fragment {
         mExerciseGridView=(GridView)view.findViewById(R.id.myplansExercisesGrid);
         mProgramGridView = (GridView)view.findViewById(R.id.myplansProgramsGrid);
 
+        mExerciseGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Exercise exercise = (Exercise) adapterView.getAdapter().getItem(i);
+                PlannedExercise plannedExercise = new PlannedExercise();
+                Log.d(TAG,""+ allExercises.size()+" .....");
+                for (Map.Entry<String, Exercise> entry : allExercises.entrySet())
+                {
+                    Log.d(TAG,"bbbbbbbbbbb");
+                    if (entry.getValue().getName().equals(exercise.getName())){
+                        String keyy = entry.getKey();
+                        for (int j=0;j<mPlannedExerciseList.size();j++){
+                            if( mPlannedExerciseList.get(j).getExercise().equals(keyy)){
+                                plannedExercise = mPlannedExerciseList.get(j);
+                                Log.d(TAG,"........................" + plannedExercise.getExercise());
+                            }
+                        }
+                    }
+                }
+                startActivity(PlannedExerciseItem.getStartIntent(getContext(), exercise,plannedExercise));
+
+
+            }
+        });
+        mProgramGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Program program = (Program) adapterView.getAdapter().getItem(i);
+                PlannedProgram plannedProgram = new PlannedProgram();
+
+                for (Map.Entry<String, Program> entry : allPrograms.entrySet())
+                {
+                    if (entry.getValue().getName().equals(program.getName())){
+                        String keyy = entry.getKey();
+                        for (int j=0;j<mPlannedProgramList.size();j++){
+                            if( mPlannedProgramList.get(j).getProgram().equals(keyy)){
+                                plannedProgram = mPlannedProgramList.get(j);
+
+                            }
+                        }
+                    }
+                }
+                startActivity(PlannedProgramItem.getStartIntent(getContext(), program,plannedProgram, dateTime));
+
+
+            }
+        });
+
 
         allPrograms = new HashMap<String,Program>();
+        allExercises = new HashMap<String,Exercise>();
         //beolvassa a Planned Exercise-kat az adott dátumnak megfelelően
         attachDatabaseReadListener();
 
@@ -385,6 +447,7 @@ public class MyPlansFragment extends Fragment {
                                     Exercise exercise = dataSnapshot.getValue(Exercise.class);
                                     Log.d(TAG,"child ......"+exercise.getName());
                                     mExerciseAdapter.add(exercise);
+                                    allExercises.put(dataSnapshot.getKey(),exercise);
 
                                 }
 
@@ -446,6 +509,7 @@ public class MyPlansFragment extends Fragment {
                                     Log.d(TAG, "child ......" + exercise.getName());
                                     mExerciseAdapter.add(exercise);
 
+                                    allExercises.put(dataSnapshot.getKey(),exercise);
                                 }
 
                             }

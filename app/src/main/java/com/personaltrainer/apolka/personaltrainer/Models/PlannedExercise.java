@@ -2,10 +2,11 @@ package com.personaltrainer.apolka.personaltrainer.Models;
 
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
-public class PlannedExercise {
+public class PlannedExercise  implements Serializable {
 
     private String exerciseName;
     private Date date;
