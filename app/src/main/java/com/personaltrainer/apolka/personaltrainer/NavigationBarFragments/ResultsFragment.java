@@ -150,7 +150,7 @@ public class ResultsFragment extends Fragment {
         upperBack.clearColorFilter();
 
 
-        upperBack.setColorFilter(Color.rgb(204,0,0));
+        //upperBack.setColorFilter(Color.rgb(204,0,0));
 
 
         return view;

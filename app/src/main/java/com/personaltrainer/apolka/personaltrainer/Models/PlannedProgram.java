@@ -11,6 +11,7 @@ public class PlannedProgram {
     private Date startDate;
     private String userId;
 
+    public PlannedProgram(){}
     public PlannedProgram(String program, Date startDate,   String  user){
         this.programName = program;
         this.startDate = startDate;
