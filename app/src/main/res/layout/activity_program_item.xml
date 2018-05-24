@@ -6,188 +6,189 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fillViewport="true">
-<android.support.constraint.ConstraintLayout
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.personaltrainer.apolka.personaltrainer.ProgramItem">
+    <android.support.constraint.ConstraintLayout
 
-
-    <TextView
-        android:id="@+id/ProgramNameTextView"
-        android:layout_height="48dp"
-        android:layout_width="310dp"
-        android:layout_marginEnd= "@dimen/margin8"
-        android:layout_marginStart="@dimen/margin8"
-        android:layout_marginTop="@dimen/margin16"
-        android:text=""
-        android:textColor="@color/colorTextViewValue"
-        android:textAlignment="center"
-        android:textSize="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-    <TextView
-        android:id="@+id/ProgramDescriptionTextView"
-        android:layout_width="230dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="@dimen/margin8"
-        android:layout_marginTop="@dimen/margin16"
-        android:text="Description: "
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProgramNameTextView"
-        />
-
-    <TextView
-        android:id="@+id/ProgramDescriptionValue"
-        android:layout_width="319dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin8"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="@dimen/margin8"
-        android:layout_marginTop="@dimen/margin16"
-        android:text=""
-        android:textColor="@color/colorTextViewValue"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:scrollHorizontally="true"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProgramDescriptionTextView" />
-
-    <TextView
-        android:id="@+id/ProgramDurationInWeeksTextView"
-        android:layout_width="230dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="@dimen/margin8"
-        android:layout_marginTop="@dimen/margin16"
-        android:text="Duration(in weeks): "
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProgramDescriptionValue" />
-
-    <TextView
-        android:id="@+id/ProgramDurationInWeeksTextViewValue"
-        android:layout_width="68dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="@dimen/margin8"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="@dimen/margin8"
-        android:layout_marginTop="@dimen/margin16"
-        android:text=""
-        android:textColor="@color/colorTextViewValue"
-        android:textAlignment="viewEnd"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/ProgramDurationInWeeksTextView"
-        app:layout_constraintStart_toEndOf="@+id/ProgramDurationInWeeksTextView"
-        app:layout_constraintTop_toBottomOf="@+id/ProgramDescriptionValue" />
-    <TextView
-        android:id="@+id/ProgramWorkoutDaysTextView"
-        android:layout_width="230dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="@dimen/margin8"
-        android:layout_marginTop="@dimen/margin16"
-        android:text="Workout days: "
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProgramDurationInWeeksTextViewValue" />
-
-    <TextView
-        android:id="@+id/ProgramWorkoutDaysTextViewValue"
-        android:layout_width="310dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text=""
-        android:textColor="@color/colorTextViewValue"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProgramWorkoutDaysTextView" />
-
-    <TextView
-        android:id="@+id/ProgramExercisesTextView"
-        android:layout_width="230dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="@dimen/margin8"
-        android:layout_marginTop="@dimen/margin16"
-        android:text="Exercise list: "
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProgramWorkoutDaysTextViewValue" />
-
-    <Spinner
-        android:id="@+id/DaysSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProgramExercisesTextView" />
-
-    <GridView
-        android:id="@+id/CurrentdayExerciseGridView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:clipToPadding="false"
-        android:paddingBottom="15dp"
-        android:columnWidth="100dp"
-        android:gravity="center|bottom"
-        android:horizontalSpacing="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:numColumns="3"
-        android:stretchMode="spacingWidth"
-        android:verticalSpacing="20dp"
-        android:visibility="visible"
-        android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@+id/DaysSpinner"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bckgrd"
+        tools:context="com.personaltrainer.apolka.personaltrainer.ProgramItem">
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/AddThisProgramToPlansFloatingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginBottom="@dimen/margin16"
-        android:layout_marginEnd="@dimen/margin16"
-        android:src="@drawable/ic_add_black_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/ProgramNameTextView"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin8"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin16"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/colorTextViewValue"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ProgramDescriptionTextView"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin16"
+            android:text="Description: "
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.198"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProgramNameTextView" />
+
+        <TextView
+            android:id="@+id/ProgramDescriptionValue"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin8"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin16"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
+            android:text=""
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorTextViewValue"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProgramDescriptionTextView" />
+
+        <TextView
+            android:id="@+id/ProgramDurationInWeeksTextView"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin16"
+            android:text="Duration(in weeks): "
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.198"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProgramDescriptionValue" />
+
+        <TextView
+            android:id="@+id/ProgramDurationInWeeksTextViewValue"
+            android:layout_width="68dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="@dimen/margin8"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin16"
+            android:text=""
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorTextViewValue"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.121"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/ProgramDurationInWeeksTextView"
+            app:layout_constraintStart_toEndOf="@+id/ProgramDurationInWeeksTextView"
+            app:layout_constraintTop_toBottomOf="@+id/ProgramDescriptionValue" />
+
+        <TextView
+            android:id="@+id/ProgramWorkoutDaysTextView"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin16"
+            android:text="Workout days: "
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.198"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProgramDurationInWeeksTextViewValue" />
+
+        <TextView
+            android:id="@+id/ProgramWorkoutDaysTextViewValue"
+            android:layout_width="310dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/colorTextViewValue"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProgramWorkoutDaysTextView" />
+
+        <TextView
+            android:id="@+id/ProgramExercisesTextView"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin16"
+            android:text="Exercise list: "
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.198"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProgramWorkoutDaysTextViewValue" />
+
+        <Spinner
+            android:id="@+id/DaysSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProgramExercisesTextView" />
+
+        <GridView
+            android:id="@+id/CurrentdayExerciseGridView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:clipToPadding="false"
+            android:columnWidth="100dp"
+            android:gravity="center|bottom"
+            android:horizontalSpacing="10dp"
+            android:numColumns="3"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:scrollbars="none"
+            android:stretchMode="spacingWidth"
+            android:verticalSpacing="20dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/DaysSpinner" />
 
 
-</android.support.constraint.ConstraintLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/AddThisProgramToPlansFloatingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="@dimen/margin16"
+            android:layout_marginEnd="@dimen/margin16"
+            android:src="@drawable/ic_add_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
 </ScrollView>

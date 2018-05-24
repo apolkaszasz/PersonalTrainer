@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bckgrd"
     tools:context="com.personaltrainer.apolka.personaltrainer.NewPlannedProgram">
 
 
     <TextView
         android:id="@+id/NewProgramNameTextView"
         android:layout_width="310dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd= "@dimen/margin8"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin8"
         android:layout_marginStart="@dimen/margin8"
         android:layout_marginTop="@dimen/margin16"
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/colorTextViewValue"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,8 +35,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NewProgramNameTextView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/NewProgramNameTextView" />
 
     <TextView
         android:id="@+id/startDateTextViewValue"
@@ -63,12 +63,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startDateTextViewValue" />
-
-
-
-
-
-
 
 
 </android.support.constraint.ConstraintLayout>

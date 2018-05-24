@@ -1,9 +1,9 @@
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bckgrd"
     tools:context="com.personaltrainer.apolka.personaltrainer.NavigationBarFragments.ResultsFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,10 +12,10 @@
         android:id="@+id/imageViewFullBodyR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/full_body"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,16 +24,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.358"
-        />
+        app:layout_constraintVertical_bias="0.358" />
 
     <ImageView
         android:id="@+id/imageViewAbsR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/abs"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,10 +47,10 @@
         android:id="@+id/imageViewAbductorsR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/abductors"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/abductors"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -65,10 +64,10 @@
         android:id="@+id/imageViewBicepsR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/biceps"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/biceps"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -76,16 +75,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageViewCalvesR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/calves"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/calves"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -93,16 +92,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageViewChestR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/chest"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/chest"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -110,16 +109,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageViewFeetR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/feet"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/feet"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -127,16 +126,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageViewForearmsR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/forearms"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/forearms"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -144,16 +143,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageViewGlutesR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/glutes"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/glutes"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -161,15 +160,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageViewHamstringsR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/hamstrings"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/hamstrings"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -177,15 +177,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageViewHandsR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/hands"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/hands"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -193,15 +194,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageViewLatsR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/lats"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/lats"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -209,15 +211,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageViewNeckR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/neck"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/neck"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -225,15 +228,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageViewObliquesR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/obliques"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/obliques"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -241,15 +245,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageViewQuadsR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/quads"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/quads"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -257,15 +262,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageViewShouldersR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/shoulders"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/shoulders"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -273,15 +279,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageViewTricepsR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/triceps"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/triceps"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -289,15 +296,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/imageViewUpperBackR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/upper_back"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/upper_back"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -305,6 +313,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFullBodyR"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

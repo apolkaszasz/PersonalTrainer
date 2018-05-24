@@ -121,6 +121,8 @@ public class WorkoutFragment extends Fragment{
         Context context = getActivity();
         sharedPreferences = context.getSharedPreferences(
                 "userPreferences",0);
+
+
         Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
 
         initializeMuscleSquareLists();
@@ -187,71 +189,72 @@ public class WorkoutFragment extends Fragment{
                     Log.d(TAG, muscle);
                     switch (muscle){
                         case "Abs":
-                            abs.setColorFilter(Color.rgb(255,64,129));
+                            //abs.setColorFilter(Color.rgb(255,64,129));
+                            abs.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Abs";
                             break;
                         case "Abductors":
-                            abductors.setColorFilter(Color.rgb(255,64,129));
+                            abductors.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Abductors";
                             break;
                         case "Biceps":
-                            biceps.setColorFilter(Color.rgb(255,64,129));
+                            biceps.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Biceps";
                             break;
                         case "Calves":
-                            calves.setColorFilter(Color.rgb(255,64,129));
+                            calves.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Calves";
                             break;
                         case "Chest":
-                            chest.setColorFilter(Color.rgb(255,64,129));
+                            chest.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Chest";
                             break;
                         case "Feet":
-                            feet.setColorFilter(Color.rgb(255,64,129));
+                            feet.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Feet";
                             break;
                         case "Forearms":
-                            forearms.setColorFilter(Color.rgb(255,64,129));
+                            forearms.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Forearms";
                             break;
                         case "Glutes":
-                            glutes.setColorFilter(Color.rgb(255,64,129));
+                            glutes.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Glutes";
                             break;
                         case "Hamstrings":
-                            hamstrings.setColorFilter(Color.rgb(255,64,129));
+                            hamstrings.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Hamstrings";
                             break;
                         case "Hands":
-                            hands.setColorFilter(Color.rgb(255,64,129));
+                            hands.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Hands";
                             break;
                         case "Lats":
-                            lats.setColorFilter(Color.rgb(255,64,129));
+                            lats.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Lats";
                             break;
                         case "Neck":
-                            neck.setColorFilter(Color.rgb(255,64,129));
+                            neck.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Neck";
                             break;
                         case "Obliques":
-                            obliques.setColorFilter(Color.rgb(255,64,129));
+                            obliques.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Obliques";
                             break;
                         case "Quads":
-                            quads.setColorFilter(Color.rgb(255,64,129));
+                            quads.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Quads";
                             break;
                         case "Shoulders":
-                            shoulders.setColorFilter(Color.rgb(255,64,129));
+                            shoulders.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Shoulders";
                             break;
                         case "Triceps":
-                            triceps.setColorFilter(Color.rgb(255,64,129));
+                            triceps.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Triceps";
                             break;
                         case "Upper back":
-                            upperBack.setColorFilter(Color.rgb(255,64,129));
+                            upperBack.setColorFilter(Color.argb(150,255,64,129));
                             choosedMuscle = "Upper back";
                             break;
                     }
@@ -319,6 +322,7 @@ public class WorkoutFragment extends Fragment{
 
 
     private void tabbedActivityWorkouts(){
+
         startActivity(TabbedActivityWorkouts.getStartIntent(getContext(), choosedMuscle));
 
     }

@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bckgrd"
     tools:context="com.personaltrainer.apolka.personaltrainer.NewPlannedExercise">
-
 
 
     <TextView
         android:id="@+id/NewExerciseNameTextView"
         android:layout_width="310dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd= "@dimen/margin8"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin8"
         android:layout_marginStart="@dimen/margin8"
         android:layout_marginTop="@dimen/margin16"
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/colorTextViewValue"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,9 +30,9 @@
         android:layout_marginLeft="36dp"
         android:layout_marginStart="@dimen/margin8"
         android:layout_marginTop="@dimen/margin16"
-        android:textColor="@color/colorTextViewValue"
         android:text=""
         android:textAlignment="center"
+        android:textColor="@color/colorTextViewValue"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,8 +50,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NewExerceMuscleTextView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/NewExerceMuscleTextView" />
 
     <TextView
         android:id="@+id/dateTextViewValue"
@@ -60,9 +59,10 @@
         android:layout_marginEnd="@dimen/margin8"
         android:layout_marginTop="@dimen/margin16"
         android:background="@color/common_action_bar_splitter"
+        android:backgroundTint="?android:attr/textColorHighlight"
         android:clickable="true"
         android:text=""
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NewDateTextView" />
@@ -70,7 +70,7 @@
 
     <TextView
         android:id="@+id/NewExerciseRecommendedrepetitionsTextView"
-        android:layout_width="230dp"
+        android:layout_width="163dp"
         android:layout_height="30dp"
         android:layout_marginStart="@dimen/margin8"
         android:layout_marginTop="@dimen/margin16"
@@ -78,7 +78,7 @@
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTextViewValue" />
 
@@ -91,8 +91,8 @@
         android:layout_marginLeft="36dp"
         android:layout_marginStart="@dimen/margin8"
         android:layout_marginTop="@dimen/margin16"
-        android:orientation="horizontal"
         android:inputType="number"
+        android:orientation="horizontal"
         android:text=""
         android:textAlignment="viewEnd"
         android:textColor="@color/colorTextViewValue"
@@ -106,15 +106,15 @@
 
     <TextView
         android:id="@+id/NewExerciseRecommendedSetstextView"
-        android:layout_width="230dp"
+        android:layout_width="163dp"
         android:layout_height="30dp"
         android:layout_marginStart="@dimen/margin8"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="Sets: "
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NewExerciseRecommendedrepetitionsTextView" />
 
@@ -126,8 +126,8 @@
         android:layout_marginLeft="36dp"
         android:layout_marginStart="@dimen/margin8"
         android:layout_marginTop="16dp"
-        android:text=""
         android:inputType="number"
+        android:text=""
         android:textAlignment="viewEnd"
         android:textColor="@color/colorTextViewValue"
         android:textSize="14sp"
@@ -137,7 +137,6 @@
         app:layout_constraintRight_toRightOf="@+id/NewExerciseRecommendedrepetitionsTextView"
         app:layout_constraintStart_toEndOf="@+id/NewExerciseRecommendedrepetitionsTextView"
         app:layout_constraintTop_toBottomOf="@+id/NewExerciseRecommendedrepetitionsTextView" />
-
 
 
     <Button

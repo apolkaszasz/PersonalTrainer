@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bckgrd"
     tools:context="com.personaltrainer.apolka.personaltrainer.PlannedExerciseItem">
 
 
     <TextView
         android:id="@+id/ExerciseNameTextViewMyPlans"
         android:layout_width="310dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd= "@dimen/margin8"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin8"
         android:layout_marginStart="@dimen/margin8"
         android:layout_marginTop="@dimen/margin16"
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/colorTextViewValue"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,9 +30,9 @@
         android:layout_marginLeft="36dp"
         android:layout_marginStart="@dimen/margin8"
         android:layout_marginTop="@dimen/margin16"
-        android:textColor="@color/colorTextViewValue"
         android:text=""
         android:textAlignment="center"
+        android:textColor="@color/colorTextViewValue"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.439"
@@ -62,8 +63,8 @@
         android:layout_marginStart="@dimen/margin8"
         android:layout_marginTop="@dimen/margin16"
         android:text=""
-        android:textColor="@color/colorTextViewValue"
         android:textAlignment="viewEnd"
+        android:textColor="@color/colorTextViewValue"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.121"
@@ -94,10 +95,10 @@
         android:layout_marginEnd="@dimen/margin8"
         android:layout_marginLeft="36dp"
         android:layout_marginStart="@dimen/margin8"
-        android:textColor="@color/colorTextViewValue"
         android:layout_marginTop="@dimen/margin16"
         android:text=""
         android:textAlignment="viewEnd"
+        android:textColor="@color/colorTextViewValue"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.121"
@@ -105,6 +106,7 @@
         app:layout_constraintRight_toRightOf="@+id/ExerciseRecommendedrepetitionsTextViewMyPlans"
         app:layout_constraintStart_toEndOf="@+id/ExerciseRecommendedrepetitionsTextViewMyPlans"
         app:layout_constraintTop_toBottomOf="@+id/ExerciseRecommendedrepetitionsTextViewMyPlans" />
+
     <TextView
         android:id="@+id/ExerciseDescriptionTesxtViewMyPlans"
         android:layout_width="230dp"
@@ -151,8 +153,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DescriptionValueMyPlans" />
-
-
 
 
 </android.support.constraint.ConstraintLayout>

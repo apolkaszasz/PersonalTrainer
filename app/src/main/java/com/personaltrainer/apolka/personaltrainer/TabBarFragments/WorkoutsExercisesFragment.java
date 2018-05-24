@@ -48,7 +48,6 @@ public class WorkoutsExercisesFragment extends Fragment {
 
 
     private GridView gridView;
-    private ListView mExerciseListView;
     private ExerciseAdapter mExerciseAdapter;
 
 
@@ -86,27 +85,10 @@ public class WorkoutsExercisesFragment extends Fragment {
                 "userPreferences",0);
         Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
 
+        muscleFilter = sharedPreferences.getString("muscle", null);
+
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("Exercises");
-
-       /* mMessagesDatabaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot exercisedataSnapshot: dataSnapshot.getChildren()){
-                    Exercise exercise = exercisedataSnapshot.getValue(Exercise.class);
-                    Log.d(TAG, "Exercise name is: " + exercise.getName());
-                    mExerciseAdapter.add(exercise);
-                }
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });*/
-
-
 
 
     }
@@ -143,18 +125,14 @@ public class WorkoutsExercisesFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Exercise exercise = (Exercise) adapterView.getAdapter().getItem(i);
-                //Intent intent = new Intent(getActivity(), ExerciseItem.class);
-                //intent.putExtra("EcerciseObject", exercise);
 
                 startActivity(ExerciseItem.getStartIntent(getContext(), exercise));
-                //startActivity(intent);
 
             }
         });
 
         List<Exercise> exercises = new ArrayList<>();
         mExerciseAdapter = new ExerciseAdapter(this, R.layout.item_exercise, exercises);
-        //mExerciseListView.setAdapter(mExerciseAdapter);
         gridView.setAdapter(mExerciseAdapter);
 
 
@@ -210,7 +188,16 @@ public class WorkoutsExercisesFragment extends Fragment {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                     Exercise exercise = dataSnapshot.getValue(Exercise.class);
-                    mExerciseAdapter.add(exercise);
+                    if (muscleFilter!=null){
+                        if (exercise.getMuscle().equals(muscleFilter)){
+                            mExerciseAdapter.add(exercise);
+                        }
+                    }
+                    else{
+                        mExerciseAdapter.add(exercise);
+                    }
+
+
 
                 }
 

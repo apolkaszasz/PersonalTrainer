@@ -2,6 +2,7 @@ package com.personaltrainer.apolka.personaltrainer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ public class TabbedActivityWorkouts extends AppCompatActivity implements Workout
 
 
     private static final String TAG  = "TabbedActivityWorkouts";
+    private SharedPreferences sharedPreferences;
 
     private SectionsPageAdapter mSectionsPageAdapter;
 
@@ -45,6 +47,13 @@ public class TabbedActivityWorkouts extends AppCompatActivity implements Workout
         mViewPager = (ViewPager)findViewById(R.id.container);
         setupViewPager(mViewPager);
 
+
+        sharedPreferences = this.getSharedPreferences(
+                "userPreferences",0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString("muscle", muscle);
+        editor.commit();
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
     }

@@ -213,7 +213,10 @@ public class MyPlansFragment extends Fragment {
     };
 
     private void onclickdatePicker(){
-        new DatePickerDialog(getActivity(), d ,dateTime.get(Calendar.YEAR),dateTime.get(Calendar.MONTH),dateTime.get(Calendar.DAY_OF_MONTH)).show();
+         new DatePickerDialog(getActivity(), d ,dateTime.get(Calendar.YEAR),dateTime.get(Calendar.MONTH),dateTime.get(Calendar.DAY_OF_MONTH)).show();
+
+
+
 
     }
 
@@ -457,7 +460,9 @@ public class MyPlansFragment extends Fragment {
                         else{
                             PlannedExercise plannedExercise = dataSnapshot.getValue(PlannedExercise.class);
                             Log.d(TAG,"Planned exercise child is........."+plannedExercise.getExercise());
-                            mPlannedExerciseList.add(plannedExercise);
+                            if (plannedExercise.getUser().equals(sharedPreferences.getString("UserID",null))){
+                                mPlannedExerciseList.add(plannedExercise);
+                            }
                         }
 
                     }
@@ -517,7 +522,10 @@ public class MyPlansFragment extends Fragment {
                         } else {
                             PlannedExercise plannedExercise = dataSnapshot.getValue(PlannedExercise.class);
                             Log.d(TAG, "Planned exercise child is........." + plannedExercise.getExercise());
-                            mPlannedExerciseList.add(plannedExercise);
+                            if (plannedExercise.getUser().equals(sharedPreferences.getString("UserID",null))){
+                                mPlannedExerciseList.add(plannedExercise);
+                            }
+
                         }
                     }
 

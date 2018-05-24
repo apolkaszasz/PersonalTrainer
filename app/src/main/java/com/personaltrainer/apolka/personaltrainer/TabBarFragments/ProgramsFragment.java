@@ -42,6 +42,8 @@ public class ProgramsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private String muscleFilter;
+
     private OnFragmentInteractionListener mListener;
 
 
@@ -80,25 +82,12 @@ public class ProgramsFragment extends Fragment {
         sharedPreferences = context.getSharedPreferences(
                 "userPreferences",0);
         Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
+
+        muscleFilter = sharedPreferences.getString("muscle",null);
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mDatabaseReference = mFirebaseDatabase.getReference().child("Programs");
 
-        /*mDatabaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot  programDataSnapshot: dataSnapshot.getChildren()){
-                    Program program = programDataSnapshot.getValue(Program.class);
-                    Log.d(TAG, "Program mane is " + program.getName());
-                    mProgramAdapter.add(program);
-                }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-                Log.w(TAG, "Failed to read value", databaseError.toException());
-            }
-        });*/
     }
 
     @Override
