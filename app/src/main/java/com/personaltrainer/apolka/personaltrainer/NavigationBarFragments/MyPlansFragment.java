@@ -119,6 +119,7 @@ public class MyPlansFragment extends Fragment {
 
 
         Context context = getActivity();
+
         sharedPreferences = context.getSharedPreferences(
                 "userPreferences",0);
         Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
@@ -376,6 +377,7 @@ public class MyPlansFragment extends Fragment {
                         }
                     }
                 }
+                Log.d(TAG, "APOLKA SZASZ ...>>> .."+plannedExercise.getExercise()+" "+plannedExercise.getUser());
                 startActivity(PlannedExerciseItem.getStartIntent(getContext(), exercise,plannedExercise));
 
 
@@ -459,10 +461,15 @@ public class MyPlansFragment extends Fragment {
                         }
                         else{
                             PlannedExercise plannedExercise = dataSnapshot.getValue(PlannedExercise.class);
-                            Log.d(TAG,"Planned exercise child is........."+plannedExercise.getExercise());
-                            if (plannedExercise.getUser().equals(sharedPreferences.getString("UserID",null))){
-                                mPlannedExerciseList.add(plannedExercise);
+                            if (plannedExercise.equals(null)){
+
+                            }else{
+                                Log.d(TAG,"Planned exercise child is........."+plannedExercise.getExercise());
+                                if (plannedExercise.getUser().equals(sharedPreferences.getString("UserID",null))){
+                                    mPlannedExerciseList.add(plannedExercise);
+                                }
                             }
+
                         }
 
                     }
@@ -523,7 +530,10 @@ public class MyPlansFragment extends Fragment {
                             PlannedExercise plannedExercise = dataSnapshot.getValue(PlannedExercise.class);
                             Log.d(TAG, "Planned exercise child is........." + plannedExercise.getExercise());
                             if (plannedExercise.getUser().equals(sharedPreferences.getString("UserID",null))){
-                                mPlannedExerciseList.add(plannedExercise);
+                                if(plannedExercise.getIsPartOfaProgram()==false){
+                                    mPlannedExerciseList.add(plannedExercise);
+                                }
+
                             }
 
                         }

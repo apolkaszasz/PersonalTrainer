@@ -4,8 +4,11 @@
 <!-- TODO Matyas: Amint mar beszeltuk, jobb lenne vektorokat hasznalni png-k helyett. -->
 <!-- TODO Matyas: A PNG-kel kapcsolatban, a mipmap mappaban is megvannak ugyanazok a png-k, csak tobb meretben, azokat is torolheted.-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
 
     <item
         android:id="@+id/navigation_plans"

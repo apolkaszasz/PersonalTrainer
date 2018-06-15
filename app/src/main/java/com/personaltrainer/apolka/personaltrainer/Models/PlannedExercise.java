@@ -14,16 +14,18 @@ public class PlannedExercise  implements Serializable {
     private int plannedSets;
     private int plannedRepetitionsToIncreaseWith;
     private boolean isPartOfaProgram;
+    private int isCompleted;
     private String userId;
 
     public PlannedExercise(){};
-    public PlannedExercise(String exercise, Date date, int plannedRepetitions, int plannedSets, int plannedRepetitionsToIncreaseWith,boolean isPartOfaProgram, String userId){
+    public PlannedExercise(String exercise, Date date, int plannedRepetitions, int plannedSets, int plannedRepetitionsToIncreaseWith,boolean isPartOfaProgram, String userId,int isCompleted){
         this.exerciseName = exercise;
         this.date = date;
         this.plannedRepetitions = plannedRepetitions;
         this.plannedSets = plannedSets;
         this.plannedRepetitionsToIncreaseWith = plannedRepetitionsToIncreaseWith;
         this.isPartOfaProgram = isPartOfaProgram;
+        this.isCompleted = isCompleted;
         this.userId = userId;
     }
 
@@ -33,6 +35,7 @@ public class PlannedExercise  implements Serializable {
     public int getPlannedSets(){return this.plannedSets;}
     public int getPlannedRepetitionsToIncreaseWith(){return this.plannedRepetitionsToIncreaseWith;}
     public boolean getIsPartOfaProgram(){return this.isPartOfaProgram;}
+    public int getIsCompleted(){return this.isCompleted;}
     public String getUser(){return this.userId;}
 
 
@@ -42,5 +45,6 @@ public class PlannedExercise  implements Serializable {
     public void setPlannedSets(int plannedSets){this.plannedSets = plannedSets;}
     public void setPlannedRepetitionsToIncreaseWith(int plannedRepetitionsToIncreaseWith){this.plannedRepetitionsToIncreaseWith = plannedRepetitionsToIncreaseWith;}
     public void setIsPartOfaProgram(boolean isPartOfaProgram){this.isPartOfaProgram = isPartOfaProgram;}
+    public void setCompleted(int isCompleted){this.isCompleted = isCompleted;}
     public void setUser(String user){this.userId = user;}
 }

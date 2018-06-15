@@ -2,6 +2,7 @@ package com.personaltrainer.apolka.personaltrainer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,7 +26,9 @@ import com.personaltrainer.apolka.personaltrainer.Models.Program;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PlannedProgramItem extends AppCompatActivity {
 
@@ -38,6 +41,11 @@ public class PlannedProgramItem extends AppCompatActivity {
     private TextView programDescription;
     private TextView programDurationInWeeks;
     private TextView programStartDate;
+
+    private Map<String, Exercise> exercisesWithKeys;
+
+
+    private SharedPreferences sharedPreferences;
 
 
     private List<String> exerciseKeylist;
@@ -75,11 +83,17 @@ public class PlannedProgramItem extends AppCompatActivity {
 
 
         Intent i  = getIntent();
+
         program = (Program)i.getSerializableExtra(PROGRAM_OBJ_KEY);
         plannedProgram = (PlannedProgram)i.getSerializableExtra(PLANNED_PROGRAM_OBJ_KEY);
         dateTime = (Calendar)i.getSerializableExtra(DATE_SELECTED);
 
         Log.d(TAG,"..." + program.getName() +"  " + plannedProgram.getProgram());
+
+
+        sharedPreferences = this.getSharedPreferences(
+                "userPreferences",0);
+        Log.d(TAG,"................."+sharedPreferences.getString("UserID",null));
 
 
         programName = (TextView) findViewById(R.id.ProgramNameTextViewMyPlans);
@@ -97,6 +111,8 @@ public class PlannedProgramItem extends AppCompatActivity {
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("Exercises").child("");
+
+        exercisesWithKeys = new HashMap<String, Exercise>();
 
         exerciseKeylist = new ArrayList<>();
         int days = program.getDurationInWeeks()*7;
@@ -122,9 +138,25 @@ public class PlannedProgramItem extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Exercise exercise = (Exercise) adapterView.getAdapter().getItem(i);
+
+                String keyy = "";
+                for (Map.Entry<String, Exercise> entry : exercisesWithKeys.entrySet())
+                {
+                    Log.d(TAG,"bbbbbbbbbbb");
+                    if (entry.getValue().getName().equals(exercise.getName())){
+                        keyy = entry.getKey();
+
+                    }
+                }
+
                 PlannedExercise pe = new PlannedExercise();
+                pe.setExercise(keyy);
+                pe.setUser(sharedPreferences.getString("UserID",null));
                 pe.setPlannedRepetitions(week * exercise.getRecommendedRepetitionsToIncreaseWith() + exercise.getRecommendedRepetitions());
                 pe.setPlannedSets(exercise.getRecommendedSets());
+                pe.setIsPartOfaProgram(true);
+                pe.setPlannedRepetitionsToIncreaseWith(exercise.getRecommendedRepetitionsToIncreaseWith());
+                pe.setDate(dateTime.getTime());
                 startActivity(PlannedExerciseItem.getStartIntent(view.getContext(), exercise,pe));
             }
         });
@@ -165,6 +197,7 @@ public class PlannedProgramItem extends AppCompatActivity {
                             Exercise exercise = dataSnapshot.getValue(Exercise.class);
                             Log.d(TAG,"ammmmmmmmm");
                             mExerciseAdapter.add(exercise);
+                            exercisesWithKeys.put(key,exercise);
                         }
                     }
                 }

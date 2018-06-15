@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -18,9 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.personaltrainer.apolka.personaltrainer.Adapters.ExerciseAdapter;
 import com.personaltrainer.apolka.personaltrainer.Adapters.PlannedExerciseAdapter;
-import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
 import com.personaltrainer.apolka.personaltrainer.R;
 
@@ -214,188 +211,193 @@ public class ResultsFragment extends Fragment {
                     PlannedExercise plannedExercise = dataSnapshot.getValue(PlannedExercise.class);
                     Log.d(TAG,plannedExercise.getUser());
                     if(plannedExercise.getUser().equals(sharedPreferences.getString("UserID",null))){
-                        Log.d(TAG,plannedExercise.getUser());
-                        Calendar day1 = Calendar.getInstance();
-                        day1.add(Calendar.DATE,-1);
-                        Calendar day2 = Calendar.getInstance();
-                        day2.add(Calendar.DATE,-2);
-                        Calendar day3 = Calendar.getInstance();
-                        day3.add(Calendar.DATE,-3);
-                        Calendar day4 = Calendar.getInstance();
-                        day4.add(Calendar.DATE,-4);
-                        Calendar day5 = Calendar.getInstance();
-                        day5.add(Calendar.DATE,-5);
-                        Calendar day6 = Calendar.getInstance();
-                        day6.add(Calendar.DATE,-6);
-                        Calendar day7 = Calendar.getInstance();
-                        day7.add(Calendar.DATE,-7);
+                        if (plannedExercise.getIsCompleted() ==1) {
 
 
-                        Log.d(TAG,dateFormat.format(plannedExercise.getDate()));
-                        Log.d(TAG,dateFormat.format(day1.getTime()) );
+                            Log.d(TAG, plannedExercise.getUser());
+                            Calendar day1 = Calendar.getInstance();
+                            day1.add(Calendar.DATE, 0);
+                            Calendar day2 = Calendar.getInstance();
+                            day2.add(Calendar.DATE, -1);
+                            Calendar day3 = Calendar.getInstance();
+                            day3.add(Calendar.DATE, -2);
+                            Calendar day4 = Calendar.getInstance();
+                            day4.add(Calendar.DATE, -3);
+                            Calendar day5 = Calendar.getInstance();
+                            day5.add(Calendar.DATE, -4);
+                            Calendar day6 = Calendar.getInstance();
+                            day6.add(Calendar.DATE, -5);
+                            Calendar day7 = Calendar.getInstance();
+                            day7.add(Calendar.DATE, -6);
 
-                        if(dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day6.getTime())) || dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day7.getTime()))){
-                            //yellow
-                            Log.d(TAG,plannedExercise.getUser());
-                            if(plannedExercise.getExercise().startsWith("abs")){
-                                abs.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("abd")){
-                                abductors.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("bic")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("cal")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("che")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("fee")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("for")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("glu")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("ham")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("han")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("lat")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("nec")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("obl")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("qua")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("sho")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("tri")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                            if(plannedExercise.getExercise().startsWith("upp")){
-                                biceps.setColorFilter(Color.rgb(255, 255, 153));
-                            }
-                        }
-                        if(dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day4.getTime())) || dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day5.getTime())) ){
-                            //orange
-                            if(plannedExercise.getExercise().startsWith("abs")){
-                                abs.setColorFilter(Color.rgb(255,102,0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("abd")){
-                                abductors.setColorFilter(Color.rgb(255,102,0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("bic")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("cal")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("che")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("fee")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("for")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("glu")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("ham")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("han")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("lat")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("nec")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("obl")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("qua")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("sho")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("tri")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("upp")){
-                                biceps.setColorFilter(Color.rgb(255, 102, 0));
-                            }
 
-                        }
-                        if(dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day1.getTime())) || dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day2.getTime())) || dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day3.getTime()))){
-                            //red
-                            if(plannedExercise.getExercise().startsWith("abs")){
-                                abs.setColorFilter(Color.rgb(204,0,0));
+                            Log.d(TAG, dateFormat.format(plannedExercise.getDate()));
+                            Log.d(TAG, dateFormat.format(day1.getTime()));
+
+                            if (dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day6.getTime())) || dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day7.getTime()))) {
+                                //yellow
+                                Log.d(TAG, plannedExercise.getUser());
+                                if (plannedExercise.getExercise().startsWith("abs")) {
+                                    abs.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("abd")) {
+                                    abductors.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("bic")) {
+                                    biceps.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("cal")) {
+                                    calves.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("che")) {
+                                    chest.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("fee")) {
+                                    feet.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("for")) {
+                                    forearms.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("glu")) {
+                                    glutes.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("ham")) {
+                                    hamstrings.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("han")) {
+                                    hands.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("lat")) {
+                                    lats.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("nec")) {
+                                    neck.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("obl")) {
+                                    obliques.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("qua")) {
+                                    quads.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("sho")) {
+                                    shoulders.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("tri")) {
+                                    triceps.setColorFilter(Color.rgb(255, 255, 153));
+                                }
+                                if (plannedExercise.getExercise().startsWith("upp")) {
+                                    upperBack.setColorFilter(Color.rgb(255, 255, 153));
+                                }
                             }
-                            if(plannedExercise.getExercise().startsWith("abd")){
-                                abductors.setColorFilter(Color.rgb(204,0,0));
+                            if (dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day4.getTime())) || dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day5.getTime()))) {
+                                //orange
+                                if (plannedExercise.getExercise().startsWith("abs")) {
+                                    abs.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("abd")) {
+                                    abductors.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("bic")) {
+                                    biceps.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("cal")) {
+                                    calves.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("che")) {
+                                    chest.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("fee")) {
+                                    feet.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("for")) {
+                                    forearms.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("glu")) {
+                                    glutes.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("ham")) {
+                                    hamstrings.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("han")) {
+                                    hands.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("lat")) {
+                                    lats.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("nec")) {
+                                    neck.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("obl")) {
+                                    obliques.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("qua")) {
+                                    quads.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("sho")) {
+                                    shoulders.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("tri")) {
+                                    triceps.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("upp")) {
+                                    upperBack.setColorFilter(Color.rgb(255, 102, 0));
+                                }
+
                             }
-                            if(plannedExercise.getExercise().startsWith("bic")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("cal")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("che")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("fee")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("for")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("glu")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("ham")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("han")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("lat")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("nec")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("obl")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("qua")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("sho")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("tri")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
-                            }
-                            if(plannedExercise.getExercise().startsWith("upp")){
-                                biceps.setColorFilter(Color.rgb(204, 0, 0));
+                            if (dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day1.getTime())) || dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day2.getTime())) || dateFormat.format(plannedExercise.getDate()).equals(dateFormat.format(day3.getTime()))) {
+                                //red
+                                if (plannedExercise.getExercise().startsWith("abs")) {
+                                    abs.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("abd")) {
+                                    abductors.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("bic")) {
+                                    biceps.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("cal")) {
+                                    calves.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("che")) {
+                                    chest.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("fee")) {
+                                    feet.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("for")) {
+                                    forearms.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("glu")) {
+                                    glutes.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("ham")) {
+                                    hamstrings.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("han")) {
+                                    hands.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("lat")) {
+                                    lats.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("nec")) {
+                                    neck.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("obl")) {
+                                    obliques.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("qua")) {
+                                    quads.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("sho")) {
+                                    shoulders
+                                            .setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("tri")) {
+                                    triceps.setColorFilter(Color.rgb(204, 0, 0));
+                                }
+                                if (plannedExercise.getExercise().startsWith("upp")) {
+                                    upperBack.setColorFilter(Color.rgb(204, 0, 0));
+                                }
                             }
                         }
                     }

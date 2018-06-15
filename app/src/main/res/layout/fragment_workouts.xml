@@ -1,8 +1,10 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@drawable/hatter"
     tools:context="com.personaltrainer.apolka.personaltrainer.TabBarFragments.WorkoutsExercisesFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,23 +12,22 @@
     <!-- TODO Matyas: clipToPadding="false"-al eltudod tuntetni scrollozas kozben a felso paddinget, nem fog belevagni a tartalomba-->
     <!-- TODO Matyas: ha megnezed, van egy scrollbar is, amit ha akarsz, eltudsz tuntetni a scrollbar="none"-al-->
     <GridView
+        android:id="@+id/mygridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/mygridview"
-        android:paddingTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:clipToPadding="false"
-        android:paddingBottom="15dp"
         android:columnWidth="100dp"
         android:gravity="center|bottom"
         android:horizontalSpacing="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:numColumns="3"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:scrollbars="none"
         android:stretchMode="spacingWidth"
         android:verticalSpacing="20dp"
-        android:visibility="visible"
-        android:scrollbars="none"
-        />
+        android:visibility="visible" />
 
     <!--
     <ListView

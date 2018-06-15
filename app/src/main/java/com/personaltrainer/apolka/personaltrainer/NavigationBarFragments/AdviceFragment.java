@@ -2,7 +2,6 @@ package com.personaltrainer.apolka.personaltrainer.NavigationBarFragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -27,7 +26,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 
 
-public class AdvicesFragment extends Fragment {
+public class AdviceFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -41,7 +40,7 @@ public class AdvicesFragment extends Fragment {
     private DatabaseReference mMessagesDatabaseReference;
     private ChildEventListener mChildEventListener;
 
-    private static final String TAG = "AdvicesFragment";
+    private static final String TAG = "AdviceFragment";
 
 
 
@@ -53,12 +52,12 @@ public class AdvicesFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public AdvicesFragment() {
+    public AdviceFragment() {
     }
 
 
-    public static AdvicesFragment newInstance(String param1, String param2) {
-        AdvicesFragment fragment = new AdvicesFragment();
+    public static AdviceFragment newInstance(String param1, String param2) {
+        AdviceFragment fragment = new AdviceFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

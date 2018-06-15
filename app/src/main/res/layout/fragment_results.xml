@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bckgrd"
+    android:background="@drawable/hatter"
     tools:context="com.personaltrainer.apolka.personaltrainer.NavigationBarFragments.ResultsFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -304,6 +304,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:background="@color/common_google_signin_btn_text_dark_disabled"
         android:scaleType="fitCenter"
         android:src="@drawable/upper_back"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewFullBodyR"

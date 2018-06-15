@@ -54,7 +54,7 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
                     .into(imageView);
         }
         else
-            imageView.setImageResource(R.drawable.nopicture);
+            imageView.setImageResource(R.drawable.ikon);
 
         nameTextView.setText(program.getName());
 

@@ -6,15 +6,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fillViewport="true">
-<!-- TODO MAtyas: Altalanosan. Van rengeteg olyan ertek a marginoknak, ami standard, es rengeteg helyen ismetled. Igazabol mindent ki kellene vinni a dimens.xml-be,-->
-<!-- de legalabb ezeket, amiket sokszor hasznalsz vidd ki, mert konnyebb lesz utanna. Lesznek ezek a meghatarozott ertekeid (8dp, 16dp) es azokat fogod tudni hasznalni.-->
-<!-- TODO Matyas: A masik dolog, hogy a constraintLayoutnal az toEnd es toRight, illetve toStart es toLeft ugyanazok, ezert duplikalod oket, eleg egyiket (a start-end-eket hasznalni)-->
-<!-- Ugyancsak nem a legjobb otlet megadni a textViewknak a mereteit. Hasznalj inkabb wrap_content-et, mert nem tudhatod sosem, hogy pont mekkora lesz a bele kerulo szoveg.-->
+
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bckgrd"
+        android:background="@drawable/hatter"
         tools:context="com.personaltrainer.apolka.personaltrainer.ExerciseItem">
 
         <TextView
@@ -23,7 +20,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin8"
             android:layout_marginStart="@dimen/margin8"
-            android:layout_marginTop="@dimen/margin16"
+            android:layout_marginTop="50dp"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"
             android:text=""
             android:textAlignment="center"
             android:textColor="@color/colorTextViewValue"
@@ -52,11 +50,11 @@
             android:id="@+id/ExerciseRecommendedrepetitionsTextView"
             android:layout_width="230dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="36dp"
             android:layout_marginStart="@dimen/margin8"
             android:layout_marginTop="@dimen/margin16"
             android:text="Recommended repetitions: "
             android:textAlignment="viewStart"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.198"
@@ -86,11 +84,11 @@
             android:id="@+id/ExerciseRecommendedSetstextView"
             android:layout_width="230dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="36dp"
             android:layout_marginStart="@dimen/margin8"
             android:layout_marginTop="@dimen/margin16"
             android:text="Recommended sets: "
             android:textAlignment="viewStart"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.198"
@@ -120,11 +118,11 @@
             android:id="@+id/ExerciseDescriptionTesxtView"
             android:layout_width="230dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="36dp"
             android:layout_marginStart="@dimen/margin8"
             android:layout_marginTop="@dimen/margin16"
             android:text="Description: "
             android:textAlignment="viewStart"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.198"
@@ -135,12 +133,12 @@
             android:id="@+id/DescriptionValue"
             android:layout_width="319dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="fill_vertical"
             android:layout_marginEnd="@dimen/margin8"
             android:layout_marginLeft="36dp"
             android:layout_marginStart="@dimen/margin8"
             android:layout_marginTop="@dimen/margin16"
             android:layout_weight="1"
-            android:layout_gravity="fill_vertical"
 
             android:textColor="@color/colorTextViewValue"
             android:textSize="18sp"

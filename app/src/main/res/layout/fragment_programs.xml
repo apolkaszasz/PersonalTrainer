@@ -2,26 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="@drawable/hatter"
     tools:context="com.personaltrainer.apolka.personaltrainer.TabBarFragments.ProgramsFragment">
 
 
     <GridView
+        android:id="@+id/mygridviewPrograms"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/mygridviewPrograms"
-        android:paddingTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:clipToPadding="false"
-        android:paddingBottom="15dp"
         android:columnWidth="100dp"
         android:gravity="center|bottom"
         android:horizontalSpacing="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:numColumns="3"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:scrollbars="none"
         android:stretchMode="spacingWidth"
         android:verticalSpacing="20dp"
-        android:visibility="visible"
-        android:scrollbars="none"
-        />
+        android:visibility="visible" />
 
 </FrameLayout>

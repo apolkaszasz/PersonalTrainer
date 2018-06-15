@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -157,6 +158,8 @@ public class WorkoutFragment extends Fragment{
         upperBack = (ImageView)view.findViewById(R.id.imageViewUpperBack);
 
 
+        ImageView text = (ImageView)view.findViewById(R.id.imageView3);
+        text.setColorFilter(Color.argb(255,255,255,255));
         fullBody = (ImageView)view.findViewById(R.id.imageViewFullBody);
         fullBody.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -190,71 +193,71 @@ public class WorkoutFragment extends Fragment{
                     switch (muscle){
                         case "Abs":
                             //abs.setColorFilter(Color.rgb(255,64,129));
-                            abs.setColorFilter(Color.argb(150,255,64,129));
+                            abs.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Abs";
                             break;
                         case "Abductors":
-                            abductors.setColorFilter(Color.argb(150,255,64,129));
+                            abductors.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Abductors";
                             break;
                         case "Biceps":
-                            biceps.setColorFilter(Color.argb(150,255,64,129));
+                            biceps.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Biceps";
                             break;
                         case "Calves":
-                            calves.setColorFilter(Color.argb(150,255,64,129));
+                            calves.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Calves";
                             break;
                         case "Chest":
-                            chest.setColorFilter(Color.argb(150,255,64,129));
+                            chest.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Chest";
                             break;
                         case "Feet":
-                            feet.setColorFilter(Color.argb(150,255,64,129));
+                            feet.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Feet";
                             break;
                         case "Forearms":
-                            forearms.setColorFilter(Color.argb(150,255,64,129));
+                            forearms.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Forearms";
                             break;
                         case "Glutes":
-                            glutes.setColorFilter(Color.argb(150,255,64,129));
+                            glutes.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Glutes";
                             break;
                         case "Hamstrings":
-                            hamstrings.setColorFilter(Color.argb(150,255,64,129));
+                            hamstrings.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Hamstrings";
                             break;
                         case "Hands":
-                            hands.setColorFilter(Color.argb(150,255,64,129));
+                            hands.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Hands";
                             break;
                         case "Lats":
-                            lats.setColorFilter(Color.argb(150,255,64,129));
+                            lats.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Lats";
                             break;
                         case "Neck":
-                            neck.setColorFilter(Color.argb(150,255,64,129));
+                            neck.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Neck";
                             break;
                         case "Obliques":
-                            obliques.setColorFilter(Color.argb(150,255,64,129));
+                            obliques.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Obliques";
                             break;
                         case "Quads":
-                            quads.setColorFilter(Color.argb(150,255,64,129));
+                            quads.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Quads";
                             break;
                         case "Shoulders":
-                            shoulders.setColorFilter(Color.argb(150,255,64,129));
+                            shoulders.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Shoulders";
                             break;
                         case "Triceps":
-                            triceps.setColorFilter(Color.argb(150,255,64,129));
+                            triceps.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Triceps";
                             break;
                         case "Upper back":
-                            upperBack.setColorFilter(Color.argb(150,255,64,129));
+                            upperBack.setColorFilter(Color.argb(240,255,255,255));
                             choosedMuscle = "Upper back";
                             break;
                     }

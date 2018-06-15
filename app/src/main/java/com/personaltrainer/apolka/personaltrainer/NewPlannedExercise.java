@@ -129,7 +129,7 @@ public class NewPlannedExercise extends AppCompatActivity {
 
 
 
-                        PlannedExercise plannedExercise = new PlannedExercise(exerciseKey, dateTime.getTime(),repetitions,sets,0,false,userId);
+                        PlannedExercise plannedExercise = new PlannedExercise(exerciseKey, dateTime.getTime(),repetitions,sets,0,false,userId,0);
                         mMessagesDatabaseReference2 = mFirebaseDatabase.getReference();
                         mMessagesDatabaseReference2.child("PlannedExercises").child(exerciseKey+userId+Calendar.getInstance().getTime().toString()).setValue(plannedExercise);
 

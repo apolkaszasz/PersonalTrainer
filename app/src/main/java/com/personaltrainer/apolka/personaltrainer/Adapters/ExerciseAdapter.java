@@ -58,7 +58,7 @@ public class ExerciseAdapter extends ArrayAdapter<Exercise> {
                     .into(imageView);
         }
         else
-            imageView.setImageResource(R.drawable.nopicture);
+            imageView.setImageResource(R.drawable.ikon);
 
         nameTextView.setText(exercise.getName());
         muscleTextView.setText(exercise.getMuscle().toString());
