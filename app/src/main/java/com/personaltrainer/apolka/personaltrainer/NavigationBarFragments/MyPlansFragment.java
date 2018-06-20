@@ -3,7 +3,6 @@ package com.personaltrainer.apolka.personaltrainer.NavigationBarFragments;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,11 +12,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.GridView;
-import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,22 +22,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.personaltrainer.apolka.personaltrainer.Adapters.ExerciseAdapter;
-import com.personaltrainer.apolka.personaltrainer.Adapters.PlannedExerciseAdapter;
 import com.personaltrainer.apolka.personaltrainer.Adapters.ProgramAdapter;
-import com.personaltrainer.apolka.personaltrainer.ExerciseItem;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedProgram;
 import com.personaltrainer.apolka.personaltrainer.Models.Program;
-import com.personaltrainer.apolka.personaltrainer.PlannedExerciseItem;
-import com.personaltrainer.apolka.personaltrainer.PlannedProgramItem;
+import com.personaltrainer.apolka.personaltrainer.DetailActivities.PlannedExerciseItem;
+import com.personaltrainer.apolka.personaltrainer.DetailActivities.PlannedProgramItem;
 import com.personaltrainer.apolka.personaltrainer.R;
 
-import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -442,7 +435,10 @@ public class MyPlansFragment extends Fragment {
                         }
                         else{
                             PlannedProgram plannedProgram = dataSnapshot.getValue(PlannedProgram.class);
-                            mPlannedProgramList.add(plannedProgram);
+                            if (plannedProgram.getUser().equals(sharedPreferences.getString("UserID",null))){
+                                mPlannedProgramList.add(plannedProgram);
+                            }
+
                         }
                     }
                     else{

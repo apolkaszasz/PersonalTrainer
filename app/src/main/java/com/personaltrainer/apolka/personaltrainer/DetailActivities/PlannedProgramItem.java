@@ -1,11 +1,10 @@
-package com.personaltrainer.apolka.personaltrainer;
+package com.personaltrainer.apolka.personaltrainer.DetailActivities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,6 +21,7 @@ import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedProgram;
 import com.personaltrainer.apolka.personaltrainer.Models.Program;
+import com.personaltrainer.apolka.personaltrainer.R;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -142,7 +142,7 @@ public class PlannedProgramItem extends AppCompatActivity {
                 String keyy = "";
                 for (Map.Entry<String, Exercise> entry : exercisesWithKeys.entrySet())
                 {
-                    Log.d(TAG,"bbbbbbbbbbb");
+
                     if (entry.getValue().getName().equals(exercise.getName())){
                         keyy = entry.getKey();
 
@@ -195,7 +195,6 @@ public class PlannedProgramItem extends AppCompatActivity {
                     for(String key:exerciseKeylist){
                         if(dataSnapshot.getKey().equals(key)){
                             Exercise exercise = dataSnapshot.getValue(Exercise.class);
-                            Log.d(TAG,"ammmmmmmmm");
                             mExerciseAdapter.add(exercise);
                             exercisesWithKeys.put(key,exercise);
                         }

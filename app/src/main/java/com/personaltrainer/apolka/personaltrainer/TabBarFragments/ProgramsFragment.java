@@ -1,7 +1,6 @@
 package com.personaltrainer.apolka.personaltrainer.TabBarFragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,13 +17,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.personaltrainer.apolka.personaltrainer.Adapters.ExerciseAdapter;
 import com.personaltrainer.apolka.personaltrainer.Adapters.ProgramAdapter;
-import com.personaltrainer.apolka.personaltrainer.ExerciseItem;
-import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.Program;
-import com.personaltrainer.apolka.personaltrainer.ProgramItem;
+import com.personaltrainer.apolka.personaltrainer.DetailActivities.ProgramItem;
 import com.personaltrainer.apolka.personaltrainer.R;
 
 import java.util.ArrayList;

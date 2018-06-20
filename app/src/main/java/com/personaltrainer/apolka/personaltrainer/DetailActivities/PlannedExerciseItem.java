@@ -1,8 +1,7 @@
-package com.personaltrainer.apolka.personaltrainer;
+package com.personaltrainer.apolka.personaltrainer.DetailActivities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
+import com.personaltrainer.apolka.personaltrainer.R;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -108,7 +108,7 @@ public class PlannedExerciseItem extends YouTubeBaseActivity {
 
                 }else{
                     if (key == null){
-                        Log.d(TAG, plannedExercise.toString()+"...............................................................");
+                        Log.d(TAG, plannedExercise.toString()+"...............");
                         PlannedExercise newPlannedExercise = new PlannedExercise(plannedExercise.getExercise(), plannedExercise.getDate(), plannedExercise.getPlannedRepetitions(), plannedExercise.getPlannedSets(),plannedExercise.getPlannedRepetitionsToIncreaseWith(),true, plannedExercise.getUser(),plannedExercise.getIsCompleted());
                         key = newPlannedExercise.getExercise()+newPlannedExercise.getUser()+Calendar.getInstance().getTime().toString();
                         if (newPlannedExercise.getIsPartOfaProgram() == true && newPlannedExercise.getIsCompleted() ==1){
@@ -208,7 +208,6 @@ public class PlannedExerciseItem extends YouTubeBaseActivity {
                                             completedCheckBox.setChecked(true);
                                             completedCheckBox.setEnabled(false);
                                         }
-                                        Log.d(TAG, "here.......00");
                                         key = dataSnapshot.getKey();
 
                                     }
@@ -220,7 +219,6 @@ public class PlannedExerciseItem extends YouTubeBaseActivity {
                                 if(pE.getExercise().equals(plannedExercise.getExercise())){
                                     if (pE.getPlannedRepetitions() == plannedExercise.getPlannedRepetitions() && pE.getIsPartOfaProgram()==plannedExercise.getIsPartOfaProgram() && pE.getPlannedSets() ==plannedExercise.getPlannedSets() && pE.getPlannedRepetitionsToIncreaseWith() == plannedExercise.getPlannedRepetitionsToIncreaseWith()){
 
-                                        Log.d(TAG, "here.......00");
                                         key = dataSnapshot.getKey();
 
                                     }

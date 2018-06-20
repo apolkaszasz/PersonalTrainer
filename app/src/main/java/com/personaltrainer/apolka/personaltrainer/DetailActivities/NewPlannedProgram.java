@@ -1,4 +1,4 @@
-package com.personaltrainer.apolka.personaltrainer;
+package com.personaltrainer.apolka.personaltrainer.DetailActivities;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,10 +18,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
-import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedProgram;
 import com.personaltrainer.apolka.personaltrainer.Models.Program;
+import com.personaltrainer.apolka.personaltrainer.R;
 
 import java.text.DateFormat;
 import java.util.Calendar;

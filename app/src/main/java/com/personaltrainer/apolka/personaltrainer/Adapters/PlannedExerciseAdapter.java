@@ -1,14 +1,12 @@
 package com.personaltrainer.apolka.personaltrainer.Adapters;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
 import com.personaltrainer.apolka.personaltrainer.NavigationBarFragments.MyPlansFragment;
-import com.personaltrainer.apolka.personaltrainer.NewPlannedExercise;
+import com.personaltrainer.apolka.personaltrainer.DetailActivities.NewPlannedExercise;
 
 import java.util.List;
 

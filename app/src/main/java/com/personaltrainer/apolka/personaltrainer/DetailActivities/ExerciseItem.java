@@ -1,13 +1,10 @@
-package com.personaltrainer.apolka.personaltrainer;
+package com.personaltrainer.apolka.personaltrainer.DetailActivities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewDebug;
 import android.widget.TextView;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -15,9 +12,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
-
-import static android.provider.Contacts.SettingsColumns.KEY;
-import static java.security.AccessController.getContext;
+import com.personaltrainer.apolka.personaltrainer.R;
 
 public class ExerciseItem extends YouTubeBaseActivity {
 

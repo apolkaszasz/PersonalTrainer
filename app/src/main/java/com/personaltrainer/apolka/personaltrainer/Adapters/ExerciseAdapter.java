@@ -11,8 +11,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.NavigationBarFragments.MyPlansFragment;
-import com.personaltrainer.apolka.personaltrainer.PlannedProgramItem;
-import com.personaltrainer.apolka.personaltrainer.ProgramItem;
+import com.personaltrainer.apolka.personaltrainer.DetailActivities.PlannedProgramItem;
+import com.personaltrainer.apolka.personaltrainer.DetailActivities.ProgramItem;
 import com.personaltrainer.apolka.personaltrainer.R;
 import com.personaltrainer.apolka.personaltrainer.TabBarFragments.WorkoutsExercisesFragment;
 

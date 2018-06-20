@@ -1,4 +1,4 @@
-package com.personaltrainer.apolka.personaltrainer;
+package com.personaltrainer.apolka.personaltrainer.DetailActivities;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.PlannedExercise;
+import com.personaltrainer.apolka.personaltrainer.R;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -112,7 +112,6 @@ public class NewPlannedExercise extends AppCompatActivity {
                     {
 
                         int repetitions;
-                        Log.d(TAG,"heteeeee..........."+repetitionsEditText.getText().toString());
                         if(repetitionsEditText.getText().toString().length()!=0){
                             repetitions = Integer.parseInt( repetitionsEditText.getText().toString() );
                         }
@@ -146,7 +145,7 @@ public class NewPlannedExercise extends AppCompatActivity {
             dateTime.set(Calendar.YEAR,year);
             dateTime.set(Calendar.MONTH,month);
             dateTime.set(Calendar.DAY_OF_MONTH,dayOfMonth);
-            Log.d(TAG, "a nap neve............"+dateTime.get(Calendar.DAY_OF_WEEK));
+            Log.d(TAG, "............"+dateTime.get(Calendar.DAY_OF_WEEK));
 
             dateTextView.setText(dateFormat.format(dateTime.getTime()));
         }

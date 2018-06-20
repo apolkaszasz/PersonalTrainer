@@ -1,12 +1,10 @@
 package com.personaltrainer.apolka.personaltrainer.NavigationBarFragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -17,13 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.personaltrainer.apolka.personaltrainer.ExerciseItem;
-import com.personaltrainer.apolka.personaltrainer.MainActivity;
-import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.Models.Square;
 import com.personaltrainer.apolka.personaltrainer.R;
 import com.personaltrainer.apolka.personaltrainer.TabbedActivityWorkouts;
@@ -139,7 +131,6 @@ public class WorkoutFragment extends Fragment{
         });
 
         abductors = (ImageView)view.findViewById(R.id.imageViewAbductors);
-        //abductors.setColorFilter(Color.rgb(255,64,129));
         abs = (ImageView)view.findViewById(R.id.imageViewAbs);
         biceps = (ImageView)view.findViewById(R.id.imageViewBiceps);
         calves = (ImageView)view.findViewById(R.id.imageViewCalves);

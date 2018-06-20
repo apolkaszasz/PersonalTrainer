@@ -6,9 +6,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ikon"
+        android:icon="@drawable/squareicon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ikon"
+        android:roundIcon="@drawable/round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Main2Activity"
+            android:name=".NavigationBarActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -28,42 +28,42 @@
         <activity
             android:name=".TabbedActivityWorkouts"
             android:label="@string/title_activity_tabbed_workouts"
-            android:parentActivityName=".Main2Activity"
+            android:parentActivityName=".NavigationBarActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Main2Activity" />
+                android:value=".NavigationBarActivity" />
         </activity>
         <activity
-            android:name=".ExerciseItem"
+            android:name=".DetailActivities.ExerciseItem"
             android:parentActivityName=".TabbedActivityWorkouts">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TabbedActivityWorkouts" />
         </activity>
         <activity
-            android:name=".ProgramItem"
+            android:name=".DetailActivities.ProgramItem"
             android:parentActivityName=".TabbedActivityWorkouts">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TabbedActivityWorkouts" />
         </activity>
         <activity
-            android:name=".NewPlannedExercise"
+            android:name=".DetailActivities.NewPlannedExercise"
             android:parentActivityName=".TabbedActivityWorkouts">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TabbedActivityWorkouts" />
         </activity>
         <activity
-            android:name=".NewPlannedProgram"
+            android:name=".DetailActivities.NewPlannedProgram"
             android:parentActivityName=".TabbedActivityWorkouts">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TabbedActivityWorkouts" />
         </activity>
-        <activity android:name=".PlannedExerciseItem" />
-        <activity android:name=".PlannedProgramItem"></activity>
+        <activity android:name=".DetailActivities.PlannedExerciseItem" />
+        <activity android:name=".DetailActivities.PlannedProgramItem"></activity>
     </application>
 
 </manifest>

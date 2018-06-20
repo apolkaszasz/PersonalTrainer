@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/hatter"
-        tools:context="com.personaltrainer.apolka.personaltrainer.PlannedProgramItem">
+        tools:context="com.personaltrainer.apolka.personaltrainer.DetailActivities.PlannedProgramItem">
 
 
         <TextView

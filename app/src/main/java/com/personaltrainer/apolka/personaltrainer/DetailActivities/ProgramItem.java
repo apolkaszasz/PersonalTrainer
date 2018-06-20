@@ -1,8 +1,7 @@
-package com.personaltrainer.apolka.personaltrainer;
+package com.personaltrainer.apolka.personaltrainer.DetailActivities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.audiofx.AudioEffect;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -21,15 +19,12 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.personaltrainer.apolka.personaltrainer.Adapters.ExerciseAdapter;
 import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
-import com.personaltrainer.apolka.personaltrainer.Models.ExerciseDay;
 import com.personaltrainer.apolka.personaltrainer.Models.Program;
-import com.personaltrainer.apolka.personaltrainer.TabBarFragments.WorkoutsExercisesFragment;
+import com.personaltrainer.apolka.personaltrainer.R;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ProgramItem extends AppCompatActivity {

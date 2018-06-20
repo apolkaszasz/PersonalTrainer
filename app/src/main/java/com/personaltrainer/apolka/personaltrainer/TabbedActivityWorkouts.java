@@ -16,7 +16,6 @@ import com.personaltrainer.apolka.personaltrainer.Models.Exercise;
 import com.personaltrainer.apolka.personaltrainer.TabBarFragments.ProgramsFragment;
 import com.personaltrainer.apolka.personaltrainer.TabBarFragments.WorkoutsExercisesFragment;
 
-//TODO Matyas: Az egesz kodra ervenyes. Probald meg kozben egy kicsit kitorolni a folosleges, nem hasznalt kodot, mert kicsit felgyult es emiatt nehezebben atlathatova valik a kod.
 public class TabbedActivityWorkouts extends AppCompatActivity implements WorkoutsExercisesFragment.OnFragmentInteractionListener, ProgramsFragment.OnFragmentInteractionListener{
 
 
